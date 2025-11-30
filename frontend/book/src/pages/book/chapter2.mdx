@@ -1,0 +1,62 @@
+---
+title: Chapter 2 - The Robotic Nervous System - ROS 2 and Simulation
+---
+
+# Chapter 2: The Robotic Nervous System - ROS 2 and Simulation
+
+The Robot Operating System (ROS 2) serves as the middleware for robot control, acting as the "nervous system" that connects software agents to hardware. This chapter delves into ROS 2's architecture and its application in humanoid robotics.
+
+ROS 2 improves upon ROS 1 with better real-time capabilities, security, and cross-platform support. It enables modular development, where components (nodes) communicate efficiently.
+
+-   **Nodes**: Independent processes that perform specific tasks, such as sensor data processing or motor control.
+-   **Services**: Synchronous request/reply communication between nodes.
+-   **Actions**: Goal-oriented tasks with feedback (e.g., navigating to a point).
+
+Using Python with the rclpy library, developers bridge AI agents to ROS controllers. For humanoids, URDF (Unified Robot Description Format) defines the robot's kinematics and visual properties.
+
+Practical steps for integrating ROS 2 with humanoid robots include:
+4.  Handling parameters for dynamic configuration changes.
+
+## Robot Simulation
+
+Simulation bridges theory and practice. Gazebo provides physics-based environments for testing and validating robot designs and control algorithms.
+
+-   **Setup**: Install Gazebo with ROS 2 integration.
+-   **URDF and SDF Formats**: Describe robots and their environments.
+
+This chapter includes hands-on exercises: Simulate a humanoid walking in Gazebo.
+
+NVIDIA Isaac accelerates Physical AI development with tools for simulation, perception, and training. This chapter focuses on Isaac Sim, Isaac ROS, and related technologies for humanoid robotics.
+
+-   **Isaac Sim**: Advanced simulation platform for robotics.
+-   **Nav2**: ROS 2 navigation stack adapted for Isaac Sim.
+
+Reinforcement learning (RL) is emphasized: Use Isaac Gym for parallel simulation and policy training.
+
+-   **Kinematics**: Forward/inverse calculations for robot arm and leg movements.
+-   **Manipulation**: Techniques for grasping and moving objects.
+
+Techniques include zero-moment point (ZMP) for balance and stable locomotion.
+
+Address domain gaps with techniques like domain randomization (varying lighting, textures) to ensure trained policies transfer effectively to real-world robots.
+
+Exercises: Implement an Isaac-based perception pipeline for object detection in a simulated humanoid robot.
+
+## Converging LLMs and Robotics
+
+Vision-Language-Action (VLA) models integrate multimodal AI for natural interactions. This chapter covers using LLMs like GPT for conversational control and task planning in robotics.
+
+-   **Voice-to-Action**: Employ OpenAI Whisper for speech recognition, translating voice commands into robot actions.
+-   **Cognitive Planning**: LLMs decompose tasks into sequences (e.g., navigate, identify, grasp).
+
+4.  Manipulates objects using natural language commands.
+
+## Hardware Considerations
+
+Physical hardware implementation requires careful selection of components.
+
+-   **Edge Kit**: Jetson Orin Nano, RealSense cameras for perception.
+-   **Robot Options**: Unitree Go2 (proxy for larger humanoids), TonyPi Pro (budget humanoid), or G1.
+-   **Cloud-Native**: AWS instances for simulation (~$205/quarter), with local edge compute.
+
+Economy Kit: ~$700 for Jetson Nano-based robot.

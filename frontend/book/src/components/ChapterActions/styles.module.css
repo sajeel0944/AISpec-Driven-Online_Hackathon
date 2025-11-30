@@ -1,0 +1,64 @@
+.chapterActions {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.actionButton {
+  background-color: var(--ifm-color-primary);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.actionButton:hover {
+  background-color: var(--ifm-color-primary-dark);
+}
+
+.personalizationContainer {
+  position: relative;
+  display: inline-block;
+}
+
+.personalizationOptions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--ifm-background-color);
+  border: 1px solid var(--ifm-toc-border-color);
+  border-radius: 0.25rem;
+  padding: 1rem;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.personalizationOptions label {
+  font-weight: bold;
+}
+
+.personalizationOptions select {
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid var(--ifm-toc-border-color);
+  background-color: var(--ifm-background-surface-color);
+  color: var(--ifm-font-color-base);
+}
+
+.errorText {
+  color: var(--ifm-color-danger);
+  margin-top: 0.5rem;
+}
+
+.processedContent {
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px solid var(--ifm-toc-border-color);
+  border-radius: 0.25rem;
+  background-color: var(--ifm-background-surface-color);
+}
+

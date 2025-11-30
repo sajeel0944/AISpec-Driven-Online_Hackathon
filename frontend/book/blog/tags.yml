@@ -1,0 +1,39 @@
+physical-ai:
+  label: Physical AI
+  permalink: /tags/physical-ai
+  description: Discussions and insights on Physical AI concepts.
+
+robotics:
+  label: Robotics
+  permalink: /tags/robotics
+  description: Articles related to general robotics and humanoid systems.
+
+trends:
+  label: Trends
+  permalink: /tags/trends
+  description: Emerging trends and future directions in Physical AI.
+
+case-study:
+  label: Case Study
+  permalink: /tags/case-study
+  description: Real-world examples and experiments in Physical AI applications.
+
+simulation:
+  label: Simulation
+  permalink: /tags/simulation
+  description: Topics on robot simulation environments like Gazebo and Isaac Sim.
+
+humanoid:
+  label: Humanoid
+  permalink: /tags/humanoid
+  description: Content specifically about humanoid robots.
+
+documentation:
+  label: Documentation
+  permalink: /tags/documentation
+  description: Best practices and tools for documenting Physical AI projects.
+
+automation:
+  label: Automation
+  permalink: /tags/automation
+  description: Articles on automation using Physical AI and robotics.

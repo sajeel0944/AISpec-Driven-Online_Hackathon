@@ -1,55 +1,71 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+Sync Impact Report:
+- Version change: 1.0.0 -> 1.0.1
+- Modified principles: Technical & Performance Standards (added Project Manager: uv)
+- Added sections: None
+- Removed sections: None
+- Templates requiring updates:
+  - .specify/templates/plan-template.md ⚠ pending
+  - .specify/templates/spec-template.md ⚠ pending
+  - .specify/templates/tasks-template.md ⚠ pending
+  - .claude/commands/sp.constitution.md ⚠ pending
+  - .claude/commands/sp.plan.md ⚠ pending
+  - .claude/commands/sp.tasks.md ⚠ pending
+- Follow-up TODOs: None
+-->
+
+# Physical AI & Humanoid Robotics Interactive Book with Integrated AI Chatbot Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Strict RAG & No Hallucination
+The AI chatbot MUST ONLY answer using content from the book. It must NOT hallucinate or use external knowledge unless explicitly allowed. This ensures factual accuracy and contextual relevance.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. Authentication & User Data Privacy
+User authentication is MANDATORY to access AI features, chapter translation, and personalization. Personalized content, embeddings, and any user data MUST be stored securely, adhering to strict access controls and rate limits (5-10 messages/min per user). JWT-based authentication via Better-Auth MUST be used.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. Content Immutability & Versioning
+Book content MUST be stable, versioned, and immutable. Only authorized administrators are permitted to update book content. All embeddings MUST update automatically and reliably following any content changes.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. Performance & Responsiveness
+The system MUST meet defined performance constraints: embedding search within 500ms and chatbot responses within 3 seconds. Vector size MUST be 1536 (OpenAI embeddings).
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### V. Ethical AI & Content Guidelines
+The chatbot MUST remain factual, avoid assumptions, provide citations from the book, ask clarifying questions when needed, and use only retrieved context. It MUST NOT produce harmful robotics content, explain how to build weapons, use external internet knowledge, or mention internal system architecture.
 
-### [PRINCIPLE_6_NAME]
+### VI. Observability & Analytics
+The system MUST log every question and AI response for analytics purposes to ensure continuous improvement and monitoring of AI behavior.
 
+## Technical & Performance Standards
 
-[PRINCIPLE__DESCRIPTION]
+The project will adhere to the following technical and performance constraints:
+- Frontend: Docusaurus + Tailwind + TypeScript
+- Backend: FastAPI + Python 3.12
+- Project Manager: uv
+- Vector DB: Qdrant Cloud Free Tier
+- Relational DB: Neon Serverless Postgres
+- AI: OpenAI Agents SDK + RAG
+- Documentation MUST be statically generated.
+- Embedding search MUST be < 500ms.
+- Chatbot response MUST be < 3s.
+- Vector size MUST be 1536 (OpenAI embeddings).
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+## UX & Content Management
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
-
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
-
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+The project will prioritize a clean and professional user experience and robust content management:
+- UI Theme: Clean, professional.
+- Typography: Consistent across all chapters.
+- Features: Clear “Translate to Urdu” button and “Personalize Chapter” button at the top/beside each chapter.
+- Chatbot: Appears as a floating widget or sidebar.
+- Content: Book content MUST be stable, versioned, and immutable. Only admins can update book content. All embeddings MUST update automatically after content changes.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+This constitution supersedes all other practices. Amendments to this constitution require full documentation, approval by project leads, and a clear migration plan if changes impact existing systems or principles. All Pull Requests (PRs) and code reviews MUST verify compliance with these principles. Any increase in system complexity MUST be thoroughly justified.
+- No access to user data without explicit permission.
+- Rate limit: 5–10 messages/min per user.
+- JWT-based authentication via Better-Auth.
+- All embeddings and personalizations stored securely.
+- The chatbot must NOT produce harmful robotics content or explain how to build weapons.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.0.1 | **Ratified**: 2025-11-29 | **Last Amended**: 2025-11-30

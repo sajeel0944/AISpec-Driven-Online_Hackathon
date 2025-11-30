@@ -1,0 +1,23 @@
+physical-ai-team:
+  name: Physical AI Team
+  title: Researchers & Engineers
+  url: https://example.com/physical-ai-team
+  image_url: https://example.com/img/physical-ai-team.png
+
+robotics-innovators:
+  name: Robotics Innovators
+  title: Leading Experts in Humanoid Robotics
+  url: https://example.com/robotics-innovators
+  image_url: https://example.com/img/robotics-innovators.png
+
+physical-ai-documentation:
+  name: Physical AI Documentation
+  title: Technical Writers for Physical AI
+  url: https://example.com/physical-ai-docs
+  image_url: https://example.com/img/physical-ai-docs.png
+
+robotics-exploration:
+  name: Robotics Exploration Lab
+  title: Advanced Robotics Research Group
+  url: https://example.com/robotics-exploration
+  image_url: https://example.com/img/robotics-exploration.png
