@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { ChapterTranslationRequest, ChapterTranslationResponse } from '../../types/chapter';
-import styles from './styles.module.css';
 
 interface TranslationButtonProps {
   chapterId: string;
@@ -54,9 +53,9 @@ export default function TranslationButton({
   };
 
   return (
-    <button className={styles.actionButton} onClick={handleTranslate} disabled={isLoading}>
+    <button className="bg-ifm-primary text-white border-none py-2 px-4 rounded cursor-pointer text-base hover:bg-ifm-primary-dark" onClick={handleTranslate} disabled={isLoading}>
       {isLoading ? 'Translating...' : 'Translate to Urdu'}
-      {error && <span className={styles.errorMessage}> (Error: {error})</span>}
+      {error && <span className="text-ifm-danger mt-2"> (Error: {error})</span>}
     </button>
   );
 }

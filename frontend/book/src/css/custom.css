@@ -1,3 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+/* Custom CSS properties for Docusaurus theme integration with Tailwind */
+:root {
+  /* Primary Colors */
+  --tw-ifm-color-primary: #3b82f6; /* Tailwind's blue-500 */
+  --tw-ifm-color-primary-dark: #2563eb;   /* Tailwind's blue-600 */
+  --tw-ifm-color-primary-darker: #2563eb; /* Tailwind's blue-600 - same as dark */
+  --tw-ifm-color-primary-darkest: #2563eb; /* Tailwind's blue-600 - same as dark */
+  --tw-ifm-color-primary-light: #60a5fa;  /* Tailwind's blue-400 */
+  --tw-ifm-color-primary-lighter: #60a5fa; /* Tailwind's blue-400 - same as light */
+  --tw-ifm-color-primary-lightest: #60a5fa; /* Tailwind's blue-400 - same as light */
+
+  /* Background Colors */
+  --tw-ifm-background-color: var(--ifm-background-color);
+  --tw-ifm-background-surface-color: var(--ifm-background-surface-color);
+
+  /* Font Colors */
+  --tw-ifm-font-color-base: var(--ifm-font-color-base);
+
+  /* Border Colors */
+  --tw-ifm-toc-border-color: var(--ifm-toc-border-color); /* Used as ifm-border */
+
+  /* Secondary Color */
+  --tw-ifm-color-secondary: #64748b; /* Tailwind's slate-500 */
+
+  /* Danger Color */
+  --tw-ifm-color-danger: #ef4444; /* Tailwind's red-500, a common danger color */
+
+  /* Map Docusaurus Infima variables to Tailwind colors */
+  --ifm-color-primary: var(--tw-ifm-color-primary);
+  --ifm-color-primary-dark: var(--tw-ifm-color-primary-dark);
+  --ifm-color-primary-darker: var(--tw-ifm-color-primary-darker);
+  --ifm-color-primary-darkest: var(--tw-ifm-color-primary-darkest);
+  --ifm-color-primary-light: var(--tw-ifm-color-primary-light);
+  --ifm-color-primary-lighter: var(--tw-ifm-color-primary-lighter);
+  --ifm-color-primary-lightest: var(--tw-ifm-color-primary-lightest);
+
+  --ifm-color-secondary: var(--tw-ifm-color-secondary);
+}
+
 /**
  * Any CSS included here will be global. The classic template
  * bundles Infima by default. Infima is a CSS framework designed to
@@ -9,8 +50,14 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
-
-html {
-  font-family: 'Inter', sans-serif;
+.test-ifm-primary-bg {
+  background-color: var(--tw-ifm-color-primary);
 }
+
+/* Dark mode overrides */
+html[data-theme='dark'] {
+  --ifm-background-color: #1a1a1a; /* Aesthetic dark gray instead of pure black */
+  --ifm-background-surface-color: #282c34; /* Slightly lighter for card-like elements */
+  --ifm-code-background: #2d2d2d; /* For code blocks */
+}
+

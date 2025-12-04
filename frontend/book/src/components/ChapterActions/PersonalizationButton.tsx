@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import styles from './styles.module.css';
 import { ChapterPersonalizationRequest, ChapterPersonalizationResponse, PersonalizationTone } from '../../types/chapter';
 
 interface PersonalizationButtonProps {
@@ -62,9 +61,9 @@ export default function PersonalizationButton({
   };
 
   return (
-    <div className={styles.personalizationContainer}>
+    <div className="relative inline-block">
       <button
-        className={styles.actionButton}
+        className="bg-ifm-primary text-white border-none py-2 px-4 rounded cursor-pointer text-base hover:bg-ifm-primary-dark"
         onClick={() => setShowOptions(!showOptions)}
         disabled={isLoading}
       >
@@ -72,10 +71,11 @@ export default function PersonalizationButton({
       </button>
 
       {showOptions && (
-        <div className={styles.personalizationOptions}>
-          <label htmlFor="tone-select">Tone:</label>
+        <div className="absolute top-full left-0 bg-ifm-background border border-ifm-border rounded p-4 z-10 flex flex-col gap-2">
+          <label htmlFor="tone-select" className="font-bold">Tone:</label>
           <select
             id="tone-select"
+            className="p-2 rounded border border-ifm-border bg-ifm-surface text-ifm-font"
             value={selectedTone}
             onChange={(e) => setSelectedTone(e.target.value as PersonalizationTone)}
           >
@@ -87,7 +87,7 @@ export default function PersonalizationButton({
             ))}
           </select>
           <button
-            className={styles.actionButton}
+            className="bg-ifm-primary text-white border-none py-2 px-4 rounded cursor-pointer text-base hover:bg-ifm-primary-dark"
             onClick={handlePersonalize}
             disabled={isLoading || !selectedTone}
           >
@@ -96,7 +96,7 @@ export default function PersonalizationButton({
         </div>
       )}
 
-      {error && <p className={styles.errorText}>{error}</p>}
+      {error && <p className="text-ifm-danger mt-2">{error}</p>}
     </div>
   );
 }

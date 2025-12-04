@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import styles from './styles.module.css';
 import TranslationButton from './TranslationButton';
 import PersonalizationButton from './PersonalizationButton'; // Import the new component
 
@@ -22,7 +21,7 @@ export default function ChapterActions(): JSX.Element {
   const dummyContent = "This is some dummy content to translate."; // This might become personalized content later
 
   return (
-    <div className={styles.chapterActions}>
+    <div className="flex gap-4 mb-4">
       <TranslationButton
         chapterId={dummyChapterId}
         contentToTranslate={dummyContent} // Or personalizedContent if available
@@ -33,7 +32,7 @@ export default function ChapterActions(): JSX.Element {
         onPersonalizationComplete={handlePersonalizationComplete}
       />
       {(translatedContent || personalizedContent) && (
-        <div className={styles.processedContent}>
+        <div className="mt-4 p-4 border border-ifm-border rounded bg-ifm-surface">
           <h3>{translatedContent ? "Translated Content:" : "Personalized Content:"}</h3>
           <p>{translatedContent || personalizedContent}</p>
         </div>

@@ -1,10 +1,9 @@
-import React, { type ReactNode } from 'react';
-import styles from './styles.module.css';
+import React, { JSX, type ReactNode } from 'react';
 
 interface Props {
   children: ReactNode;
 }
 
 export default function BookContent({ children }: Props): JSX.Element {
-  return <div className={styles.bookContent}>{children}</div>;
+  return <div className="leading-relaxed prose">{children}</div>;
 }
