@@ -22,8 +22,8 @@ The implementation will follow a phased approach, starting with the removal of T
 - Tailwind CSS configuration files are removed or appropriately disabled.
 
 #### Implementation Tasks:
-- [ ] T001 Remove `tailwindcss`, `postcss`, `autoprefixer` dependencies from `frontend/book/package.json`.
-- [ ] T002 Delete `frontend/book/postcss.config.js` and `frontend/book/tailwind.config.js`.
+- [x] T001 Remove `tailwindcss`, `postcss`, `autoprefixer` dependencies from `frontend/book/package.json`.
+- [x] T002 Delete `frontend/book/postcss.config.js` and `frontend/book/tailwind.config.js`.
 
 ## Phase 2: Foundational
 
@@ -34,8 +34,8 @@ The implementation will follow a phased approach, starting with the removal of T
 - Initial custom CSS structure is established in `frontend/book/src/css/custom.css`.
 
 #### Implementation Tasks:
-- [ ] T003 Audit all `.tsx` and `.mdx` files in `frontend/book/src/` for Tailwind CSS utility classes and document their corresponding visual effects or required custom styles.
-- [ ] T004 Create a base `frontend/book/src/css/variables.css` file for defining CSS custom properties (e.g., colors, typography, spacing).
+- [x] T003 Audit all `.tsx` and `.mdx` files in `frontend/book/src/` for Tailwind CSS utility classes and document their corresponding visual effects or required custom styles.
+- [x] T004 Create a base `frontend/book/src/css/variables.css` file for defining CSS custom properties (e.g., colors, typography, spacing).
 
 ## Phase 3: User Story 1 - Replace Tailwind CSS with Custom CSS (P1)
 
@@ -47,10 +47,10 @@ The implementation will follow a phased approach, starting with the removal of T
 - No Tailwind CSS utility classes are found in the rendered HTML.
 
 #### Implementation Tasks:
-- [ ] T005 [P] [US1] Replace Tailwind CSS utility classes with custom CSS classes in `frontend/book/src/pages/index.tsx`, linking to `frontend/book/src/css/custom.css` and `frontend/book/src/css/variables.css`.
-- [ ] T006 [P] [US1] Replace Tailwind CSS utility classes with custom CSS classes in components under `frontend/book/src/components/`, linking to `frontend/book/src/css/custom.css` and `frontend/book/src/css/variables.css`.
-- [ ] T007 [P] [US1] Replace Tailwind CSS utility classes with custom CSS classes in Docusaurus markdown files (e.g., `frontend/book/src/pages/book/*.mdx` and `frontend/book/docs/**/*.md` or similar), linking to `frontend/book/src/css/custom.css` and `frontend/book/src/css/variables.css`.
-- [ ] T008 [US1] Refactor and centralize all newly created custom CSS rules into `frontend/book/src/css/custom.css` and `frontend/book/src/css/variables.css`.
+- [x] T005 [P] [US1] Replace Tailwind CSS utility classes with custom CSS classes in `frontend/book/src/pages/index.tsx`, linking to `frontend/book/src/css/custom.css` and `frontend/book/src/css/variables.css`.
+- [x] T006 [P] [US1] Replace Tailwind CSS utility classes with custom CSS classes in components under `frontend/book/src/components/`, linking to `frontend/book/src/css/custom.css` and `frontend/book/src/css/variables.css`.
+- [x] T007 [P] [US1] Replace Tailwind CSS utility classes with custom CSS classes in Docusaurus markdown files (e.g., `frontend/book/src/pages/book/*.mdx` and `frontend/book/docs/**/*.md` or similar), linking to `frontend/book/src/css/custom.css` and `frontend/book/src/css/variables.css`.
+- [x] T008 [US1] Refactor and centralize all newly created custom CSS rules into `frontend/book/src/css/custom.css` and `frontend/book/src/css/variables.css`.
 
 ## Final Phase: Polish & Cross-Cutting Concerns
 
@@ -61,8 +61,8 @@ The implementation will follow a phased approach, starting with the removal of T
 - Performance metrics are maintained.
 
 #### Implementation Tasks:
-- [ ] T009 Perform thorough visual inspection and responsiveness testing across all pages and screen sizes to ensure consistent appearance and behavior.
-- [ ] T010 Conduct Lighthouse audits (performance, accessibility, SEO) to confirm no degradation in scores compared to the baseline.
+- [x] T009 Perform thorough visual inspection and responsiveness testing across all pages and screen sizes to ensure consistent appearance and behavior.
+- [x] T010 Conduct Lighthouse audits (performance, accessibility, SEO) to confirm no degradation in scores compared to the baseline.
 
 ## Dependency Graph
 
