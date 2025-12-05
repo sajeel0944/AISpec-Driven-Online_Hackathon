@@ -5,5 +5,5 @@ interface Props {
 }
 
 export default function BookContent({ children }: Props): JSX.Element {
-  return <div className="leading-relaxed prose">{children}</div>;
+  return <div className="book-content">{children}</div>;
 }

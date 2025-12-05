@@ -1,0 +1,64 @@
+:root {
+  /* Colors - based on Docusaurus/Tailwind initial theme */
+  --ifm-color-primary: #337ab7; /* Example primary color */
+  --ifm-color-primary-dark: #286090;
+  --ifm-color-primary-light: #52a1d9;
+
+  --ifm-background-color: #ffffff; /* Light mode background */
+  --ifm-background-surface-color: #f0f2f5; /* Light mode surface */
+  --ifm-color-border: #e0e4e8;
+  --ifm-color-font: #242526; /* Default font color */
+  --ifm-color-secondary: #6c757d;
+  --ifm-color-danger: #dc3545;
+
+  /* Typography */
+  --ifm-font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --ifm-font-size-base: 1rem;
+  --ifm-line-height-base: 1.5;
+  --ifm-heading-font-weight: 700;
+
+  /* Spacing */
+  --ifm-spacing-xxs: 0.25rem; /* 4px */
+  --ifm-spacing-xs: 0.5rem; /* 8px */
+  --ifm-spacing-sm: 0.75rem; /* 12px */
+  --ifm-spacing-md: 1rem; /* 16px */
+  --ifm-spacing-lg: 1.5rem; /* 24px */
+  --ifm-spacing-xl: 2rem; /* 32px */
+  --ifm-spacing-xxl: 3rem; /* 48px */
+  --ifm-spacing-hero-py: 3rem; /* 48px */
+  --ifm-spacing-hero-py-lg: 6rem; /* 96px */
+
+  /* Border Radius */
+  --ifm-border-radius-sm: 0.25rem;
+  --ifm-border-radius-md: 0.5rem;
+  --ifm-border-radius-lg: 0.75rem;
+  --ifm-border-radius-full: 9999px;
+
+  /* Shadow (example values) */
+  --ifm-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --ifm-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --ifm-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --ifm-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --ifm-shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* Dark mode variables - will be applied by a class on <html> or <body> */
+html[data-theme='dark'] {
+  --ifm-color-primary: #52a1d9; /* Dark mode primary */
+  --ifm-color-primary-dark: #337ab7;
+  --ifm-color-primary-light: #7cb3e6;
+
+  --ifm-background-color: #1a1c1f; /* Dark mode background */
+  --ifm-background-surface-color: #2b2d30; /* Dark mode surface */
+  --ifm-color-border: #44484f;
+  --ifm-color-font: #f5f6f7; /* Dark mode font color */
+  --ifm-color-secondary: #adb5bd;
+  --ifm-color-danger: #ef4444; /* Brighter danger for dark mode */
+
+  /* Adjust shadow for dark mode if needed */
+  --ifm-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+  --ifm-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.15);
+  --ifm-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+  --ifm-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+  --ifm-shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+}

@@ -103,7 +103,7 @@ export default function Chatbot({ chapterId }: ChatbotProps): JSX.Element {
   return (
     <>
       <button
-        className="fixed bottom-5 right-5 bg-ifm-primary text-white border-none rounded-full w-[60px] h-[60px] text-4xl flex justify-center items-center cursor-pointer shadow-xl z-[1000] transition-all duration-300 ease-in hover:bg-ifm-primary-dark hover:scale-105"
+        className="chatbot-toggle-button"
         onClick={() => setIsOpen(!isOpen)}
       >
         {isOpen ? "−" : "💬"}
@@ -115,25 +115,22 @@ export default function Chatbot({ chapterId }: ChatbotProps): JSX.Element {
           role="dialog"
           aria-modal="true"
           aria-labelledby="chatbot-title"
-          // Inline fallback styles ensure correct positioning even if Tailwind isn't applied
-          style={{ position: 'fixed', right: 20, bottom: 20, zIndex: 1000, width: 360, maxWidth: '90vw', height: '72vh', maxHeight: 600, display: 'flex', flexDirection: 'column' }}
-          className="bg-ifm-background border border-ifm-border rounded-xl shadow-2xl overflow-hidden animate-fadeIn"
+          className="chatbot-panel"
         >
-          <h1 className="bg-blend-darken">hasduysga</h1>
           {/* Header */}
-          <header className="flex items-center justify-between bg-ifm-primary text-white px-4 py-3">
-            <h3 id="chatbot-title" className="text-lg font-semibold">
+          <header className="chatbot-header">
+            <h3 id="chatbot-title" className="chatbot-title">
               RAG Chatbot
             </h3>
-            <div className="flex items-center gap-2">
+            <div className="chatbot-header-actions">
               <button
                 aria-label="Minimize chat"
                 title="Minimize"
-                className="text-white opacity-80 hover:opacity-100 p-1 rounded"
+                className="chatbot-minimize-button"
                 onClick={() => setIsOpen(false)}
               >
                 <span className="sr-only">Close chat</span>
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <svg xmlns="http://www.w3.org/2000/svg" className="chatbot-icon" viewBox="0 0 20 20" fill="currentColor">
                   <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
                 </svg>
               </button>
@@ -141,31 +138,29 @@ export default function Chatbot({ chapterId }: ChatbotProps): JSX.Element {
           </header>
 
           {/* Messages - semantic list with live region for screen readers */}
-          <section className="flex-1 p-4 overflow-y-auto bg-ifm-surface" aria-live="polite">
-            <ul className="space-y-3">
+          <section className="chatbot-messages-section" aria-live="polite">
+            <ul className="chatbot-messages-list">
               {messages.map((msg) => (
                 <li
                   key={msg.id}
-                  className={`max-w-[85%] py-2.5 px-3.5 rounded-2xl break-words leading-normal ${
-                    msg.type === "user"
-                      ? "ml-auto bg-ifm-primary-light text-ifm-font rounded-br-sm"
-                      : "mr-auto bg-white text-ifm-font border border-ifm-border rounded-bl-sm shadow-sm"
+                  className={`chatbot-message-bubble ${
+                    msg.type === "user" ? "chatbot-user-message" : "chatbot-ai-message"
                   }`}
                   role={msg.type === "user" ? "article" : "article"}
                 >
                   <div className="whitespace-pre-wrap">{msg.text}</div>
                   {msg.citations && msg.citations.length > 0 && (
-                    <div className="text-xs text-ifm-secondary mt-1 opacity-80">Citations: {msg.citations.join(", ")}</div>
+                    <div className="chatbot-citations">Citations: {msg.citations.join(", ")}</div>
                   )}
                 </li>
               ))}
 
               {isLoading && (
-                <li className="max-w-[85%] py-2.5 px-3.5 rounded-2xl bg-ifm-surface text-ifm-font">Thinking...</li>
+                <li className="chatbot-info-message">Thinking...</li>
               )}
 
               {error && (
-                <li className="max-w-[85%] py-2.5 px-3.5 rounded-2xl bg-ifm-surface text-ifm-font">Error: {error}</li>
+                <li className="chatbot-info-message">Error: {error}</li>
               )}
             </ul>
             <div ref={messagesEndRef} />
@@ -177,14 +172,14 @@ export default function Chatbot({ chapterId }: ChatbotProps): JSX.Element {
               e.preventDefault();
               handleSendMessage();
             }}
-            className="border-t border-ifm-border bg-ifm-background px-3 py-3 flex items-center gap-2"
+            className="chatbot-input-form"
           >
             <label htmlFor="chat-scope" className="sr-only">
               Scope
             </label>
             <select
               id="chat-scope"
-              className="py-2 px-3 border border-ifm-border rounded-full bg-ifm-surface text-ifm-font text-sm appearance-none pr-8"
+              className="chatbot-scope-select"
               value={chatScope}
               onChange={(e) => setChatScope(e.target.value as ChatScope)}
               disabled={isLoading}
@@ -199,7 +194,7 @@ export default function Chatbot({ chapterId }: ChatbotProps): JSX.Element {
               id="chat-input"
               ref={inputRef}
               type="text"
-              className="flex-1 border border-ifm-border rounded-full py-2.5 px-4 bg-white text-ifm-font text-sm focus:ring-2 focus:ring-ifm-primary focus:outline-none"
+              className="chatbot-text-input"
               placeholder="Ask a question..."
               value={inputMessage}
               onChange={(e) => setInputMessage(e.target.value)}
@@ -210,7 +205,7 @@ export default function Chatbot({ chapterId }: ChatbotProps): JSX.Element {
 
             <button
               type="submit"
-              className="bg-ifm-primary text-white rounded-full py-2.5 px-4 font-semibold disabled:opacity-60"
+              className="chatbot-send-button"
               onClick={handleSendMessage}
               disabled={isLoading || !inputMessage.trim()}
               aria-label="Send message"

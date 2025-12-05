@@ -1,6 +1,7 @@
 import type {ReactNode} from 'react';
 import clsx from 'clsx';
 import Heading from '@theme/Heading';
+import ScrollFadeIn from '../common/ScrollFadeIn'; // Import the new component
 
 type FeatureItem = {
   title: string;
@@ -43,9 +44,9 @@ const FeatureList: FeatureItem[] = [
 
 function Feature({title, Svg, description}: FeatureItem) {
   return (
-    <div className={clsx('mb-8 lg:mb-0 col col--12 md:col--6 lg:col--4 group')}>
-      <div className="text--center p-4 rounded-lg transition-all duration-300 ease-in group-hover:scale-105 group-hover:shadow-lg">
-        <Svg className="w-full max-w-[200px] h-auto mx-auto" role="img" />
+    <div className={clsx('feature-item-container col col--12 md:col--6 lg:col--4 group')}>
+      <div className="feature-item-card text--center">
+        <Svg className="feature-item-svg" role="img" />
         <div className="padding-horiz--md">
           <Heading as="h3">{title}</Heading>
           <p>{description}</p>
@@ -57,11 +58,13 @@ function Feature({title, Svg, description}: FeatureItem) {
 
 export default function HomepageFeatures(): ReactNode {
   return (
-    <section className="flex items-center py-8 w-full">
+    <section className="homepage-features-section">
       <div className="container">
         <div className="row">
           {FeatureList.map((props, idx) => (
-            <Feature key={idx} {...props} />
+            <ScrollFadeIn key={idx} delay={idx * 150}> {/* Wrap with ScrollFadeIn */}
+              <Feature {...props} />
+            </ScrollFadeIn>
           ))}
         </div>
       </div>

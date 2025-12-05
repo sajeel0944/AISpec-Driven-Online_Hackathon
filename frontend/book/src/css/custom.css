@@ -1,43 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
-
-/* Custom CSS properties for Docusaurus theme integration with Tailwind */
-:root {
-  /* Primary Colors */
-  --tw-ifm-color-primary: #3b82f6; /* Tailwind's blue-500 */
-  --tw-ifm-color-primary-dark: #2563eb;   /* Tailwind's blue-600 */
-  --tw-ifm-color-primary-darker: #2563eb; /* Tailwind's blue-600 - same as dark */
-  --tw-ifm-color-primary-darkest: #2563eb; /* Tailwind's blue-600 - same as dark */
-  --tw-ifm-color-primary-light: #60a5fa;  /* Tailwind's blue-400 */
-  --tw-ifm-color-primary-lighter: #60a5fa; /* Tailwind's blue-400 - same as light */
-  --tw-ifm-color-primary-lightest: #60a5fa; /* Tailwind's blue-400 - same as light */
-
-  /* Background Colors */
-  --tw-ifm-background-color: var(--ifm-background-color);
-  --tw-ifm-background-surface-color: var(--ifm-background-surface-color);
-
-  /* Font Colors */
-  --tw-ifm-font-color-base: var(--ifm-font-color-base);
-
-  /* Border Colors */
-  --tw-ifm-toc-border-color: var(--ifm-toc-border-color); /* Used as ifm-border */
-
-  /* Secondary Color */
-  --tw-ifm-color-secondary: #64748b; /* Tailwind's slate-500 */
-
-  /* Danger Color */
-  --tw-ifm-color-danger: #ef4444; /* Tailwind's red-500, a common danger color */
-
-  /* Map Docusaurus Infima variables to Tailwind colors */
-  --ifm-color-primary: var(--tw-ifm-color-primary);
-  --ifm-color-primary-dark: var(--tw-ifm-color-primary-dark);
-  --ifm-color-primary-darker: var(--tw-ifm-color-primary-darker);
-  --ifm-color-primary-darkest: var(--tw-ifm-color-primary-darkest);
-  --ifm-color-primary-light: var(--tw-ifm-color-primary-light);
-  --ifm-color-primary-lighter: var(--tw-ifm-color-primary-lighter);
-  --ifm-color-primary-lightest: var(--tw-ifm-color-primary-lightest);
-
-  --ifm-color-secondary: var(--tw-ifm-color-secondary);
-}
+@import './variables.css'; /* Import CSS variables */
 
 /**
  * Any CSS included here will be global. The classic template
@@ -45,19 +6,517 @@
  * work well for content-centric websites.
  */
 
-/* Tailwind directives - ensure these are processed by PostCSS */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+.hero-banner {
+  padding-top: var(--ifm-spacing-hero-py);
+  padding-bottom: var(--ifm-spacing-hero-py);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
 
-.test-ifm-primary-bg {
-  background-color: var(--tw-ifm-color-primary);
+@media (min-width: 1024px) { /* lg breakpoint */
+  .hero-banner {
+    padding-top: var(--ifm-spacing-hero-py-lg);
+    padding-bottom: var(--ifm-spacing-hero-py-lg);
+  }
+}
+
+.hero-background {
+  background: linear-gradient(to bottom, var(--ifm-color-primary), var(--ifm-color-primary-dark));
+  color: #fff;
+}
+
+.hero-title {
+  font-size: 2.5rem; /* text-[2.5rem] */
+  font-weight: var(--ifm-heading-font-weight);
+  margin-bottom: var(--ifm-spacing-md);
+  animation: fadeInDown 1s ease-out forwards;
+}
+
+@media (min-width: 1024px) { /* lg breakpoint */
+  .hero-title {
+    font-size: 3.5rem; /* lg:text-[3.5rem] */
+  }
+}
+
+.hero-subtitle {
+  font-size: 1.2rem; /* text-[1.2rem] */
+  font-weight: 300; /* font-light */
+  margin-bottom: var(--ifm-spacing-lg);
+  color: var(--ifm-color-primary-light);
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+@media (min-width: 1024px) { /* lg breakpoint */
+  .hero-subtitle {
+    font-size: 1.5rem; /* lg:text-[1.5rem] */
+  }
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ifm-spacing-md);
+  animation: zoomIn 1s ease-out forwards;
+}
+
+.hero-button {
+  --ifm-button-color: var(--ifm-color-secondary);
+  --ifm-button-color-hover: var(--ifm-color-secondary-dark);
+  --ifm-button-text-color: #fff;
+  
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  border-radius: var(--ifm-border-radius-md);
+  padding: 0.75rem 1.5rem; /* py-3 px-6 for button--lg approx */
+  font-size: 1.1rem; /* Adjust based on button--lg size */
+  line-height: 1.5; /* Default line height for text in buttons */
+  
+  background-color: var(--ifm-button-color);
+  color: var(--ifm-button-text-color);
+  border: none;
+  cursor: pointer;
+  
+  transition: all 0.3s ease-in; /* transition-all duration-300 ease-in */
+}
+
+.hero-button:hover {
+  transform: translateY(-0.125rem); /* hover:-translate-y-0.5 */
+  box-shadow: var(--ifm-shadow-lg); /* hover:shadow-lg */
+  background-color: var(--ifm-button-color-hover);
+}
+
+.hero-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.25rem var(--ifm-color-primary-light); /* focus:ring-2 focus:ring-offset-2 focus:ring-primary-DEFAULT */
+}
+
+.hero-button:active {
+  transform: scale(0.95); /* active:scale-95 */
+}
+
+/* Keyframe animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 /* Dark mode overrides */
 html[data-theme='dark'] {
-  --ifm-background-color: #1a1a1a; /* Aesthetic dark gray instead of pure black */
-  --ifm-background-surface-color: #282c34; /* Slightly lighter for card-like elements */
+  --ifm-background-color: #1a1c1f; /* Aesthetic dark gray instead of pure black */
+  --ifm-background-surface-color: #2b2d30; /* Slightly lighter for card-like elements */
   --ifm-code-background: #2d2d2d; /* For code blocks */
 }
 
+/* Custom Docusaurus variables that were previously in tailwind.config.js */
+:root {
+  --ifm-color-secondary: #64748b; /* Tailwind's slate-500 */
+  --ifm-color-secondary-dark: #475569; /* Tailwind's slate-700 */
+}
+
+/* HomepageFeatures styles */
+.homepage-features-section {
+  display: flex;
+  align-items: center;
+  padding-top: var(--ifm-spacing-lg);
+  padding-bottom: var(--ifm-spacing-lg);
+  width: 100%;
+}
+
+.feature-item-container {
+  margin-bottom: var(--ifm-spacing-lg);
+}
+
+@media (min-width: 1024px) { /* lg breakpoint */
+  .feature-item-container {
+    margin-bottom: 0;
+  }
+}
+
+.feature-item-card {
+  text-align: center;
+  padding: var(--ifm-spacing-md);
+  border-radius: var(--ifm-border-radius-lg);
+  transition: all 0.3s ease-in;
+}
+
+.feature-item-card:hover {
+  transform: scale(1.05);
+  box-shadow: var(--ifm-shadow-lg);
+}
+
+.feature-item-svg {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* BookContent styles */
+.book-content {
+  line-height: var(--ifm-line-height-base); /* leading-relaxed */
+  /* For 'prose' class, Docusaurus handles some typography defaults.
+     We'll need to ensure general markdown rendering within this div
+     gets appropriate styles. For now, let's keep it simple.
+     More detailed 'prose' styling might involve targeting child elements
+     like p, h1, h2, etc., within .book-content. */
+}
+
+/* ScrollFadeIn styles */
+.scroll-fade-in {
+  /* The main transition is handled by the inline style in the component,
+     but this class provides a semantic hook. */
+}
+
+/* TranslationButton styles */
+.translate-button {
+  background-color: var(--ifm-color-primary);
+  color: #fff;
+  border: none;
+  padding: var(--ifm-spacing-xs) var(--ifm-spacing-md); /* py-2 px-4 */
+  border-radius: var(--ifm-border-radius-sm); /* rounded */
+  cursor: pointer;
+  font-size: var(--ifm-font-size-base); /* text-base */
+}
+
+.translate-button:hover {
+  background-color: var(--ifm-color-primary-dark); /* hover:bg-ifm-primary-dark */
+}
+
+.translate-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.translate-error-message {
+  color: var(--ifm-color-danger);
+  margin-top: var(--ifm-spacing-xs); /* mt-2 */
+}
+
+/* PersonalizationButton styles */
+.personalization-container {
+  position: relative;
+  display: inline-block;
+}
+
+.personalization-toggle-button,
+.personalization-apply-button {
+  background-color: var(--ifm-color-primary);
+  color: #fff;
+  border: none;
+  padding: var(--ifm-spacing-xs) var(--ifm-spacing-md); /* py-2 px-4 */
+  border-radius: var(--ifm-border-radius-sm); /* rounded */
+  cursor: pointer;
+  font-size: var(--ifm-font-size-base); /* text-base */
+}
+
+.personalization-toggle-button:hover,
+.personalization-apply-button:hover {
+  background-color: var(--ifm-color-primary-dark); /* hover:bg-ifm-primary-dark */
+}
+
+.personalization-options-dropdown {
+  position: absolute;
+  top: 100%; /* top-full */
+  left: 0;
+  background-color: var(--ifm-background-color);
+  border: 1px solid var(--ifm-color-border);
+  border-radius: var(--ifm-border-radius-sm); /* rounded */
+  padding: var(--ifm-spacing-md); /* p-4 */
+  z-index: 10; /* z-10 */
+  display: flex;
+  flex-direction: column; /* flex flex-col */
+  gap: var(--ifm-spacing-xs); /* gap-2 */
+}
+
+.personalization-option-label {
+  font-weight: var(--ifm-heading-font-weight); /* font-bold */
+}
+
+.personalization-select {
+  padding: var(--ifm-spacing-xs); /* p-2 */
+  border-radius: var(--ifm-border-radius-sm); /* rounded */
+  border: 1px solid var(--ifm-color-border);
+  background-color: var(--ifm-background-surface-color);
+  color: var(--ifm-color-font);
+}
+
+.personalization-error-message {
+  color: var(--ifm-color-danger);
+  margin-top: var(--ifm-spacing-xs); /* mt-2 */
+}
+
+/* ChapterActions styles */
+.chapter-actions-container {
+  display: flex;
+  gap: var(--ifm-spacing-md); /* gap-4 */
+  margin-bottom: var(--ifm-spacing-md); /* mb-4 */
+}
+
+.chapter-actions-display-box {
+  margin-top: var(--ifm-spacing-md); /* mt-4 */
+  padding: var(--ifm-spacing-md); /* p-4 */
+  border: 1px solid var(--ifm-color-border);
+  border-radius: var(--ifm-border-radius-sm); /* rounded */
+  background-color: var(--ifm-background-surface-color);
+}
+
+/* Chatbot styles */
+.chatbot-toggle-button {
+  position: fixed;
+  bottom: var(--ifm-spacing-md); /* bottom-5 */
+  right: var(--ifm-spacing-md); /* right-5 */
+  background-color: var(--ifm-color-primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--ifm-border-radius-full); /* rounded-full */
+  width: 60px; /* w-[60px] */
+  height: 60px; /* h-[60px] */
+  font-size: 2rem; /* text-4xl - adjusted for better fit */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: var(--ifm-shadow-xl); /* shadow-xl */
+  z-index: 1000; /* z-[1000] */
+  transition: all 0.3s ease-in; /* transition-all duration-300 ease-in */
+}
+
+.chatbot-toggle-button:hover {
+  background-color: var(--ifm-color-primary-dark); /* hover:bg-ifm-primary-dark */
+  transform: scale(1.05); /* hover:scale-105 */
+}
+
+.chatbot-panel {
+  background-color: var(--ifm-background-color);
+  border: 1px solid var(--ifm-color-border);
+  border-radius: var(--ifm-border-radius-xl); /* rounded-xl */
+  box-shadow: var(--ifm-shadow-2xl); /* shadow-2xl */
+  overflow: hidden;
+  position: fixed; /* Added from inline style */
+  right: var(--ifm-spacing-md); /* Added from inline style */
+  bottom: var(--ifm-spacing-md); /* Added from inline style */
+  z-index: 1000; /* Added from inline style */
+  width: 360px; /* Added from inline style */
+  max-width: 90vw; /* Added from inline style */
+  height: 72vh; /* Added from inline style */
+  max-height: 600px; /* Added from inline style */
+  display: flex; /* Added from inline style */
+  flex-direction: column; /* Added from inline style */
+  animation: fadeIn 0.3s ease-out forwards; /* animate-fadeIn */
+}
+
+.chatbot-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--ifm-color-primary);
+  color: #fff;
+  padding: var(--ifm-spacing-md) var(--ifm-spacing-md); /* px-4 py-3 */
+}
+
+.chatbot-title {
+  font-size: 1.125rem; /* text-lg */
+  font-weight: 600; /* font-semibold */
+}
+
+.chatbot-header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--ifm-spacing-xs); /* gap-2 */
+}
+
+.chatbot-minimize-button {
+  color: #fff;
+  opacity: 0.8;
+  padding: var(--ifm-spacing-xxs); /* p-1 */
+  border-radius: var(--ifm-border-radius-sm); /* rounded */
+}
+
+.chatbot-minimize-button:hover {
+  opacity: 1;
+}
+
+.chatbot-icon {
+  height: 1.25rem; /* h-5 */
+  width: 1.25rem; /* w-5 */
+}
+
+.chatbot-messages-section {
+  flex: 1; /* flex-1 */
+  padding: var(--ifm-spacing-md); /* p-4 */
+  overflow-y: auto;
+  background-color: var(--ifm-background-surface-color);
+}
+
+.chatbot-messages-list {
+  list-style: none; /* Removed default list styling */
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--ifm-spacing-sm); /* space-y-3 */
+}
+
+.chatbot-message-bubble {
+  max-width: 85%; /* max-w-[85%] */
+  padding: 0.625rem 0.75rem; /* py-2.5 px-3.5 */
+  border-radius: 1rem; /* rounded-2xl */
+  word-break: break-words; /* break-words */
+  line-height: var(--ifm-line-height-base); /* leading-normal */
+}
+
+.chatbot-user-message {
+  margin-left: auto; /* ml-auto */
+  background-color: var(--ifm-color-primary-light);
+  color: var(--ifm-color-font);
+  border-bottom-right-radius: 0.25rem; /* rounded-br-sm */
+}
+
+.chatbot-ai-message {
+  margin-right: auto; /* mr-auto */
+  background-color: #fff;
+  color: var(--ifm-color-font);
+  border: 1px solid var(--ifm-color-border);
+  border-bottom-left-radius: 0.25rem; /* rounded-bl-sm */
+  box-shadow: var(--ifm-shadow-sm); /* shadow-sm */
+}
+
+.chatbot-citations {
+  font-size: 0.75rem; /* text-xs */
+  color: var(--ifm-color-secondary); /* text-ifm-secondary */
+  margin-top: var(--ifm-spacing-xxs); /* mt-1 */
+  opacity: 0.8; /* opacity-80 */
+}
+
+.chatbot-info-message {
+  max-width: 85%; /* max-w-[85%] */
+  padding: 0.625rem 0.75rem; /* py-2.5 px-3.5 */
+  border-radius: 1rem; /* rounded-2xl */
+  background-color: var(--ifm-background-surface-color);
+  color: var(--ifm-color-font);
+}
+
+.chatbot-input-form {
+  border-top: 1px solid var(--ifm-color-border);
+  background-color: var(--ifm-background-color);
+  padding: var(--ifm-spacing-sm) var(--ifm-spacing-md); /* px-3 py-3 */
+  display: flex;
+  align-items: center;
+  gap: var(--ifm-spacing-xs); /* gap-2 */
+}
+
+.chatbot-scope-select {
+  padding: var(--ifm-spacing-xs) var(--ifm-spacing-sm); /* py-2 px-3 */
+  border: 1px solid var(--ifm-color-border);
+  border-radius: var(--ifm-border-radius-full); /* rounded-full */
+  background-color: var(--ifm-background-surface-color);
+  color: var(--ifm-color-font);
+  font-size: 0.875rem; /* text-sm */
+  -webkit-appearance: none; /* appearance-none */
+  -moz-appearance: none;
+  appearance: none;
+  padding-right: var(--ifm-spacing-lg); /* pr-8 - for custom arrow */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='currentColor'%3E%3Cpath fill-rule='evenodd' d='M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z' clip-rule='evenodd'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.5rem center;
+  background-size: 1.5em;
+}
+
+.chatbot-text-input {
+  flex: 1; /* flex-1 */
+  border: 1px solid var(--ifm-color-border);
+  border-radius: var(--ifm-border-radius-full); /* rounded-full */
+  padding: 0.625rem 1rem; /* py-2.5 px-4 */
+  background-color: #fff;
+  color: var(--ifm-color-font);
+  font-size: 0.875rem; /* text-sm */
+}
+
+.chatbot-text-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.125rem var(--ifm-color-primary); /* focus:ring-2 focus:ring-ifm-primary focus:outline-none */
+}
+
+.chatbot-send-button {
+  background-color: var(--ifm-color-primary);
+  color: #fff;
+  border-radius: var(--ifm-border-radius-full); /* rounded-full */
+  padding: 0.625rem 1rem; /* py-2.5 px-4 */
+  font-weight: 600; /* font-semibold */
+}
+
+.chatbot-send-button:disabled {
+  opacity: 0.6; /* disabled:opacity-60 */
+  cursor: not-allowed;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Root.tsx styles */
+.layout-root {
+  font-family: var(--ifm-font-family-base);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh; /* min-h-screen */
+  display: flex;
+  flex-direction: column;
+}
+
+.layout-transition-container {
+  transition: opacity 0.3s ease-in-out; /* transition-opacity duration-300 */
+}
+
+.layout-transition-container.fade-in {
+  opacity: 1;
+}
+
+.layout-transition-container.fade-out {
+  opacity: 0;
+}

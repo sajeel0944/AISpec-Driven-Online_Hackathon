@@ -53,9 +53,9 @@ export default function TranslationButton({
   };
 
   return (
-    <button className="bg-ifm-primary text-white border-none py-2 px-4 rounded cursor-pointer text-base hover:bg-ifm-primary-dark" onClick={handleTranslate} disabled={isLoading}>
+    <button className="translate-button" onClick={handleTranslate} disabled={isLoading}>
       {isLoading ? 'Translating...' : 'Translate to Urdu'}
-      {error && <span className="text-ifm-danger mt-2"> (Error: {error})</span>}
+      {error && <span className="translate-error-message"> (Error: {error})</span>}
     </button>
   );
 }

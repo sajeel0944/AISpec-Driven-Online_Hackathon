@@ -1,7 +1,7 @@
 <!--
 Sync Impact Report:
-- Version change: 1.0.0 -> 1.0.1
-- Modified principles: Technical & Performance Standards (added Project Manager: uv)
+- Version change: 1.0.1 -> 1.1.0
+- Modified principles: Technical & Performance Standards (Frontend)
 - Added sections: None
 - Removed sections: None
 - Templates requiring updates:
@@ -39,7 +39,7 @@ The system MUST log every question and AI response for analytics purposes to ens
 ## Technical & Performance Standards
 
 The project will adhere to the following technical and performance constraints:
-- Frontend: Docusaurus + Tailwind + TypeScript
+- Frontend: Docusaurus + CSS + TypeScript
 - Backend: FastAPI + Python 3.12
 - Project Manager: uv
 - Vector DB: Qdrant Cloud Free Tier
@@ -68,4 +68,4 @@ This constitution supersedes all other practices. Amendments to this constitutio
 - All embeddings and personalizations stored securely.
 - The chatbot must NOT produce harmful robotics content or explain how to build weapons.
 
-**Version**: 1.0.1 | **Ratified**: 2025-11-29 | **Last Amended**: 2025-11-30
+**Version**: 1.1.0 | **Ratified**: 2025-11-29 | **Last Amended**: 2025-12-05
