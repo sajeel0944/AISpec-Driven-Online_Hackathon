@@ -1,0 +1,27 @@
+{
+  "id": "tutorial-basics/create-a-blog-post",
+  "title": "NVIDIA Isaac Sim Integration",
+  "description": "NVIDIA Isaac Sim is a powerful, scalable robotics simulation application that accelerates the development, testing, and management of AI-based robots. Built on NVIDIA Omniverse, Isaac Sim provides a highly realistic virtual environment for advanced robotics.",
+  "source": "@site/docs/tutorial-basics/create-a-blog-post.md",
+  "sourceDirName": "tutorial-basics",
+  "slug": "/tutorial-basics/create-a-blog-post",
+  "permalink": "/docs/tutorial-basics/create-a-blog-post",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/tutorial-basics/create-a-blog-post.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "sidebar_position": 3
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Simulating with Gazebo",
+    "permalink": "/docs/tutorial-basics/create-a-document"
+  },
+  "next": {
+    "title": "Docusaurus Features for Physical AI Documentation",
+    "permalink": "/docs/tutorial-basics/markdown-features"
+  }
+}

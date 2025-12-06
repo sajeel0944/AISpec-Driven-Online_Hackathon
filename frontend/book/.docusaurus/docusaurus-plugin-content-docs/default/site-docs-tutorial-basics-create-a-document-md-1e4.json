@@ -1,0 +1,27 @@
+{
+  "id": "tutorial-basics/create-a-document",
+  "title": "Simulating with Gazebo",
+  "description": "Gazebo is a powerful 3D robot simulator that allows you to accurately and efficiently test your Physical AI algorithms in a virtual environment. This document will guide you through setting up and using Gazebo for humanoid robotics.",
+  "source": "@site/docs/tutorial-basics/create-a-document.md",
+  "sourceDirName": "tutorial-basics",
+  "slug": "/tutorial-basics/create-a-document",
+  "permalink": "/docs/tutorial-basics/create-a-document",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/tutorial-basics/create-a-document.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "sidebar_position": 2
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Basic Robot Programming",
+    "permalink": "/docs/tutorial-basics/create-a-page"
+  },
+  "next": {
+    "title": "NVIDIA Isaac Sim Integration",
+    "permalink": "/docs/tutorial-basics/create-a-blog-post"
+  }
+}

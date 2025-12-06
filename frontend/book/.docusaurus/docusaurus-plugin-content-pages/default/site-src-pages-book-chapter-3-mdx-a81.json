@@ -1,0 +1,11 @@
+{
+  "type": "mdx",
+  "permalink": "/book/chapter3",
+  "source": "@site/src/pages/book/chapter3.mdx",
+  "title": "Chapter 3 - Human-Robot Interaction",
+  "description": "Human-Robot Interaction (HRI) is a multidisciplinary field focused on the design, implementation, and evaluation of interfaces and interactions between humans and robots. In the context of Physical AI and humanoid robotics, effective HRI is crucial for seamless collaboration, intuitive control, and safe operation in shared environments.",
+  "frontMatter": {
+    "title": "Chapter 3 - Human-Robot Interaction"
+  },
+  "unlisted": false
+}

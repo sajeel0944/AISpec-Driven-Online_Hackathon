@@ -1,0 +1,11 @@
+{
+  "type": "mdx",
+  "permalink": "/book/chapter4",
+  "source": "@site/src/pages/book/chapter4.mdx",
+  "title": "Chapter 4 - Conclusion: Future Directions and Ethical Considerations",
+  "description": "This book equips readers to build Physical AI systems. Future directions include scalable sim-to-real transfer, advanced human-robot interaction, and ethical humanoid integration. Apply these concepts to innovate in embodied intelligence.",
+  "frontMatter": {
+    "title": "Chapter 4 - Conclusion: Future Directions and Ethical Considerations"
+  },
+  "unlisted": false
+}

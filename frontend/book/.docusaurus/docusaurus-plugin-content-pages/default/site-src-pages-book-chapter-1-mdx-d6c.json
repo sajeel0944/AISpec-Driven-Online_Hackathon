@@ -1,0 +1,11 @@
+{
+  "type": "mdx",
+  "permalink": "/book/chapter1",
+  "source": "@site/src/pages/book/chapter1.mdx",
+  "title": "Chapter 1 - Introduction to Physical AI and Embodied Intelligence",
+  "description": "This book serves as a comprehensive guide to Physical AI and Humanoid Robotics, drawing from the capstone course outline. It explores how AI systems can extend beyond digital realms into physical environments, enabling embodied intelligence. The content is structured into four chapters, covering foundational concepts, core technologies, advanced platforms, and practical implementation with hardware considerations. Readers will gain insights into designing, simulating, and deploying humanoid robots using tools like ROS 2, Gazebo, NVIDIA Isaac Sim, and more.",
+  "frontMatter": {
+    "title": "Chapter 1 - Introduction to Physical AI and Embodied Intelligence"
+  },
+  "unlisted": false
+}

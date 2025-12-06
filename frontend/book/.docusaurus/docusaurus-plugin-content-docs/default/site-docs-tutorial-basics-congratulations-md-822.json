@@ -1,0 +1,27 @@
+{
+  "id": "tutorial-basics/congratulations",
+  "title": "Conclusion: Your Journey into Physical AI",
+  "description": "Congratulations! You have completed the foundational tutorials for \"Physical AI & Humanoid Robotics: Bridging.\" You've taken your first steps into understanding and building intelligent systems that interact with the physical world.",
+  "source": "@site/docs/tutorial-basics/congratulations.md",
+  "sourceDirName": "tutorial-basics",
+  "slug": "/tutorial-basics/congratulations",
+  "permalink": "/docs/tutorial-basics/congratulations",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/tutorial-basics/congratulations.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 6,
+  "frontMatter": {
+    "sidebar_position": 6
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Deploying Physical AI Applications",
+    "permalink": "/docs/tutorial-basics/deploy-your-site"
+  },
+  "next": {
+    "title": "Physical AI Project Management",
+    "permalink": "/docs/category/physical-ai-project-management"
+  }
+}

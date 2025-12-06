@@ -1,0 +1,67 @@
+{
+  "permalink": "/blog/case-study-warehouse-automation-humanoid-robots",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2019-05-29-long-blog-post.md",
+  "source": "@site/blog/2019-05-29-long-blog-post.md",
+  "title": "Case Study - Warehouse Automation with Humanoid Robots",
+  "description": "The logistics and warehousing industry faces increasing demands for efficiency, accuracy, and safety. This case study explores how integrating humanoid robots powered by Physical AI is revolutionizing warehouse automation.",
+  "date": "2019-05-29T00:00:00.000Z",
+  "tags": [
+    {
+      "inline": false,
+      "label": "Case Study",
+      "permalink": "/blog/tags/tags/case-study",
+      "description": "Real-world examples and experiments in Physical AI applications."
+    },
+    {
+      "inline": false,
+      "label": "Physical AI",
+      "permalink": "/blog/tags/tags/physical-ai",
+      "description": "Discussions and insights on Physical AI concepts."
+    },
+    {
+      "inline": true,
+      "label": "logistics",
+      "permalink": "/blog/tags/logistics"
+    },
+    {
+      "inline": false,
+      "label": "Automation",
+      "permalink": "/blog/tags/tags/automation",
+      "description": "Articles on automation using Physical AI and robotics."
+    }
+  ],
+  "readingTime": 2.27,
+  "hasTruncateMarker": true,
+  "authors": [
+    {
+      "name": "Robotics Innovators",
+      "title": "Leading Experts in Humanoid Robotics",
+      "url": "https://example.com/robotics-innovators",
+      "imageURL": "https://example.com/img/robotics-innovators.png",
+      "key": "robotics-innovators",
+      "page": null
+    }
+  ],
+  "frontMatter": {
+    "slug": "case-study-warehouse-automation-humanoid-robots",
+    "title": "Case Study - Warehouse Automation with Humanoid Robots",
+    "authors": [
+      "robotics-innovators"
+    ],
+    "tags": [
+      "case-study",
+      "physical-ai",
+      "logistics",
+      "automation"
+    ]
+  },
+  "unlisted": false,
+  "prevItem": {
+    "title": "The Role of MDX in Physical AI Documentation",
+    "permalink": "/blog/the-role-of-mdx-in-physical-ai-documentation"
+  },
+  "nextItem": {
+    "title": "Emerging Trends in Physical AI",
+    "permalink": "/blog/emerging-trends-physical-ai"
+  }
+}

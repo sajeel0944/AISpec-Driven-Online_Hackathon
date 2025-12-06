@@ -1,0 +1,29 @@
+{
+  "title": "Recent posts",
+  "items": [
+    {
+      "title": "Case Study - Humanoid Robot Navigation in Unstructured Environments",
+      "permalink": "/blog/case-study-humanoid-robot-navigation-in-unstructured-environments",
+      "unlisted": false,
+      "date": "2021-08-26T00:00:00.000Z"
+    },
+    {
+      "title": "The Role of MDX in Physical AI Documentation",
+      "permalink": "/blog/the-role-of-mdx-in-physical-ai-documentation",
+      "unlisted": false,
+      "date": "2021-08-01T00:00:00.000Z"
+    },
+    {
+      "title": "Case Study - Warehouse Automation with Humanoid Robots",
+      "permalink": "/blog/case-study-warehouse-automation-humanoid-robots",
+      "unlisted": false,
+      "date": "2019-05-29T00:00:00.000Z"
+    },
+    {
+      "title": "Emerging Trends in Physical AI",
+      "permalink": "/blog/emerging-trends-physical-ai",
+      "unlisted": false,
+      "date": "2019-05-28T00:00:00.000Z"
+    }
+  ]
+}

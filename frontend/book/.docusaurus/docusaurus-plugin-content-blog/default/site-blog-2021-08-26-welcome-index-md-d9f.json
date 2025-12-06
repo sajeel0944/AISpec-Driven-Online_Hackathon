@@ -1,0 +1,62 @@
+{
+  "permalink": "/blog/case-study-humanoid-robot-navigation-in-unstructured-environments",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2021-08-26-welcome/index.md",
+  "source": "@site/blog/2021-08-26-welcome/index.md",
+  "title": "Case Study - Humanoid Robot Navigation in Unstructured Environments",
+  "description": "Humanoid robots navigating complex, unstructured outdoor environments present a significant challenge for Physical AI. This case study details an experiment focused on enabling a bipedal robot to traverse varied terrains, including uneven ground, slopes, and obstacles, using advanced perception and planning algorithms.",
+  "date": "2021-08-26T00:00:00.000Z",
+  "tags": [
+    {
+      "inline": false,
+      "label": "Case Study",
+      "permalink": "/blog/tags/tags/case-study",
+      "description": "Real-world examples and experiments in Physical AI applications."
+    },
+    {
+      "inline": true,
+      "label": "navigation",
+      "permalink": "/blog/tags/navigation"
+    },
+    {
+      "inline": false,
+      "label": "Humanoid",
+      "permalink": "/blog/tags/tags/humanoid",
+      "description": "Content specifically about humanoid robots."
+    },
+    {
+      "inline": true,
+      "label": "outdoor-robotics",
+      "permalink": "/blog/tags/outdoor-robotics"
+    }
+  ],
+  "readingTime": 2.47,
+  "hasTruncateMarker": true,
+  "authors": [
+    {
+      "name": "Robotics Exploration Lab",
+      "title": "Advanced Robotics Research Group",
+      "url": "https://example.com/robotics-exploration",
+      "imageURL": "https://example.com/img/robotics-exploration.png",
+      "key": "robotics-exploration",
+      "page": null
+    }
+  ],
+  "frontMatter": {
+    "slug": "case-study-humanoid-robot-navigation-in-unstructured-environments",
+    "title": "Case Study - Humanoid Robot Navigation in Unstructured Environments",
+    "authors": [
+      "robotics-exploration"
+    ],
+    "tags": [
+      "case-study",
+      "navigation",
+      "humanoid",
+      "outdoor-robotics"
+    ]
+  },
+  "unlisted": false,
+  "nextItem": {
+    "title": "The Role of MDX in Physical AI Documentation",
+    "permalink": "/blog/the-role-of-mdx-in-physical-ai-documentation"
+  }
+}

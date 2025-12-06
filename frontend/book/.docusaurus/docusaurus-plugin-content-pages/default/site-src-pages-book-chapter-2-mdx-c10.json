@@ -1,0 +1,11 @@
+{
+  "type": "mdx",
+  "permalink": "/book/chapter2",
+  "source": "@site/src/pages/book/chapter2.mdx",
+  "title": "Chapter 2 - The Robotic Nervous System - ROS 2 and Simulation",
+  "description": "The Robot Operating System (ROS 2) serves as the middleware for robot control, acting as the \"nervous system\" that connects software agents to hardware. This chapter delves into ROS 2's architecture and its application in humanoid robotics.",
+  "frontMatter": {
+    "title": "Chapter 2 - The Robotic Nervous System - ROS 2 and Simulation"
+  },
+  "unlisted": false
+}

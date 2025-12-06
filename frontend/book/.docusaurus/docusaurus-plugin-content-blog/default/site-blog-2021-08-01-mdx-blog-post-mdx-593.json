@@ -1,0 +1,66 @@
+{
+  "permalink": "/blog/the-role-of-mdx-in-physical-ai-documentation",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2021-08-01-mdx-blog-post.mdx",
+  "source": "@site/blog/2021-08-01-mdx-blog-post.mdx",
+  "title": "The Role of MDX in Physical AI Documentation",
+  "description": "As Physical AI and humanoid robotics become increasingly complex, effective documentation is crucial. This post explores how MDX, a superset of Markdown that lets you embed JSX, can significantly enhance the quality and interactivity of Physical AI documentation.",
+  "date": "2021-08-01T00:00:00.000Z",
+  "tags": [
+    {
+      "inline": false,
+      "label": "Physical AI",
+      "permalink": "/blog/tags/tags/physical-ai",
+      "description": "Discussions and insights on Physical AI concepts."
+    },
+    {
+      "inline": false,
+      "label": "Documentation",
+      "permalink": "/blog/tags/tags/documentation",
+      "description": "Best practices and tools for documenting Physical AI projects."
+    },
+    {
+      "inline": true,
+      "label": "mdx",
+      "permalink": "/blog/tags/mdx"
+    },
+    {
+      "inline": true,
+      "label": "docusaurus",
+      "permalink": "/blog/tags/docusaurus"
+    }
+  ],
+  "readingTime": 1.98,
+  "hasTruncateMarker": true,
+  "authors": [
+    {
+      "name": "Physical AI Documentation",
+      "title": "Technical Writers for Physical AI",
+      "url": "https://example.com/physical-ai-docs",
+      "imageURL": "https://example.com/img/physical-ai-docs.png",
+      "key": "physical-ai-documentation",
+      "page": null
+    }
+  ],
+  "frontMatter": {
+    "slug": "the-role-of-mdx-in-physical-ai-documentation",
+    "title": "The Role of MDX in Physical AI Documentation",
+    "authors": [
+      "physical-ai-documentation"
+    ],
+    "tags": [
+      "physical-ai",
+      "documentation",
+      "mdx",
+      "docusaurus"
+    ]
+  },
+  "unlisted": false,
+  "prevItem": {
+    "title": "Case Study - Humanoid Robot Navigation in Unstructured Environments",
+    "permalink": "/blog/case-study-humanoid-robot-navigation-in-unstructured-environments"
+  },
+  "nextItem": {
+    "title": "Case Study - Warehouse Automation with Humanoid Robots",
+    "permalink": "/blog/case-study-warehouse-automation-humanoid-robots"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "tutorial-extras/manage-docs-versions",
+  "title": "Managing Physical AI Projects",
+  "description": "Developing Physical AI and humanoid robotics projects often involves complex pipelines, numerous software components, and various hardware iterations. Effective project management and versioning are crucial for success. This document outlines strategies for managing your Physical AI documentation and project assets.",
+  "source": "@site/docs/tutorial-extras/manage-docs-versions.md",
+  "sourceDirName": "tutorial-extras",
+  "slug": "/tutorial-extras/manage-docs-versions",
+  "permalink": "/docs/tutorial-extras/manage-docs-versions",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/tutorial-extras/manage-docs-versions.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Physical AI Project Management",
+    "permalink": "/docs/category/physical-ai-project-management"
+  },
+  "next": {
+    "title": "Collaborating on Physical AI Projects",
+    "permalink": "/docs/tutorial-extras/translate-your-site"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "id": "intro",
+  "title": "Introduction to Physical AI Concepts",
+  "description": "Welcome to the documentation for \"Physical AI & Humanoid Robotics: Bridging.\" This section introduces foundational concepts of Physical AI, setting the stage for deeper dives into robotics, simulation, and practical applications.",
+  "source": "@site/docs/intro.md",
+  "sourceDirName": ".",
+  "slug": "/intro",
+  "permalink": "/docs/intro",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/intro.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "next": {
+    "title": "Physical AI Tutorials",
+    "permalink": "/docs/category/physical-ai-tutorials"
+  }
+}

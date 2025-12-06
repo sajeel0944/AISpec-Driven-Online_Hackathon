@@ -1,0 +1,23 @@
+{
+  "id": "tutorial-extras/translate-your-site",
+  "title": "Collaborating on Physical AI Projects",
+  "description": "Physical AI and humanoid robotics projects are inherently interdisciplinary, often involving teams of roboticists, AI engineers, software developers, and hardware specialists. Effective collaboration and communication are paramount for success. This document explores strategies for fostering collaboration within your Physical AI projects.",
+  "source": "@site/docs/tutorial-extras/translate-your-site.md",
+  "sourceDirName": "tutorial-extras",
+  "slug": "/tutorial-extras/translate-your-site",
+  "permalink": "/docs/tutorial-extras/translate-your-site",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/tutorial-extras/translate-your-site.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "sidebar_position": 2
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Managing Physical AI Projects",
+    "permalink": "/docs/tutorial-extras/manage-docs-versions"
+  }
+}
