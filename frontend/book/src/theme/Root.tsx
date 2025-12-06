@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import type {PropsWithChildren} from '@docusaurus/types';
+import React, { useState, useEffect, JSX } from 'react';
+import type {PropsWithChildren}from '@docusaurus/types';
 import { useLocation } from '@docusaurus/router'; // Import useLocation
+import Chatbot from '@site/src/components/Chat/Chatbot'; // Import the Chatbot component
+import { AuthProvider } from '@site/src/contexts/AuthContext'; // Import AuthProvider
 
 export default function Root({children}: PropsWithChildren): JSX.Element {
   const location = useLocation();
@@ -21,11 +23,16 @@ export default function Root({children}: PropsWithChildren): JSX.Element {
     }
   }, [transitionStage, children]);
 
+  const showChatbot = location.pathname.startsWith('/docs');
+
   return (
-    <div className="layout-root">
-      <div className={`layout-transition-container ${transitionStage === 'fadeIn' ? 'fade-in' : 'fade-out'}`}>
-        {displayChildren}
+    <AuthProvider>
+      <div className="layout-root">
+        <div className={`layout-transition-container ${transitionStage === 'fadeIn' ? 'fade-in' : 'fade-out'}`}>
+          {displayChildren}
+        </div>
+        {showChatbot && <Chatbot />}
       </div>
-    </div>
+    </AuthProvider>
   );
-}
+  }

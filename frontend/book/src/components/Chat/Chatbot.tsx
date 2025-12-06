@@ -130,8 +130,17 @@ export default function Chatbot({ chapterId }: ChatbotProps): JSX.Element {
                 onClick={() => setIsOpen(false)}
               >
                 <span className="sr-only">Close chat</span>
-                <svg xmlns="http://www.w3.org/2000/svg" className="chatbot-icon" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="chatbot-icon"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                    clipRule="evenodd"
+                  />
                 </svg>
               </button>
             </div>
@@ -144,13 +153,17 @@ export default function Chatbot({ chapterId }: ChatbotProps): JSX.Element {
                 <li
                   key={msg.id}
                   className={`chatbot-message-bubble ${
-                    msg.type === "user" ? "chatbot-user-message" : "chatbot-ai-message"
+                    msg.type === "user"
+                      ? "chatbot-user-message"
+                      : "chatbot-ai-message"
                   }`}
                   role={msg.type === "user" ? "article" : "article"}
                 >
                   <div className="whitespace-pre-wrap">{msg.text}</div>
                   {msg.citations && msg.citations.length > 0 && (
-                    <div className="chatbot-citations">Citations: {msg.citations.join(", ")}</div>
+                    <div className="chatbot-citations">
+                      Citations: {msg.citations.join(", ")}
+                    </div>
                   )}
                 </li>
               ))}
@@ -174,22 +187,6 @@ export default function Chatbot({ chapterId }: ChatbotProps): JSX.Element {
             }}
             className="chatbot-input-form"
           >
-            <label htmlFor="chat-scope" className="sr-only">
-              Scope
-            </label>
-            <select
-              id="chat-scope"
-              className="chatbot-scope-select"
-              value={chatScope}
-              onChange={(e) => setChatScope(e.target.value as ChatScope)}
-              disabled={isLoading}
-            >
-              <option value="global">Global</option>
-              <option value="chapter" disabled={!chapterId}>
-                Chapter
-              </option>
-            </select>
-
             <input
               id="chat-input"
               ref={inputRef}

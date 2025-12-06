@@ -1,4 +1,5 @@
 @import './variables.css'; /* Import CSS variables */
+@import './custom-auth.css'; /* Import custom styles for auth pages */
 
 /**
  * Any CSS included here will be global. The classic template
@@ -24,6 +25,53 @@
 .hero-background {
   background: linear-gradient(to bottom, var(--ifm-color-primary), var(--ifm-color-primary-dark));
   color: #fff;
+}
+
+html[data-theme='dark'] .hero-background {
+  background: linear-gradient(to bottom, var(--ifm-background-color), var(--ifm-background-surface-color));
+}
+
+.hero-content-wrapper {
+  display: flex;
+  flex-direction: column; /* Stack on mobile */
+  align-items: center;
+  gap: var(--ifm-spacing-xl); /* Gap between text and image */
+}
+
+@media (min-width: 996px) { /* Adjust breakpoint as needed for tablet/desktop */
+  .hero-content-wrapper {
+    flex-direction: row; /* Side-by-side on larger screens */
+    justify-content: space-between;
+  }
+}
+
+.hero-text-content {
+  flex: 1; /* Allows text to take available space */
+  text-align: center; /* Center text on mobile */
+}
+
+@media (min-width: 996px) {
+  .hero-text-content {
+    text-align: left; /* Align text to left on larger screens */
+  }
+}
+
+.hero-image-container {
+  flex: 1; /* Allows image to take available space */
+  display: flex;
+  justify-content: center; /* Center image on mobile */
+  align-items: center;
+}
+
+.hero-robot-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--ifm-border-radius-lg); /* Example: slight rounding */
+  box-shadow: var(--ifm-shadow-xl); /* Example: subtle shadow */
+}
+
+html[data-theme='dark'] .hero-background {
+  background: linear-gradient(to bottom, var(--ifm-background-color), var(--ifm-background-surface-color));
 }
 
 .hero-title {
@@ -96,6 +144,38 @@
 
 .hero-button:active {
   transform: scale(0.95); /* active:scale-95 */
+}
+
+.hero-email-input {
+  padding: 0.75rem 1.5rem;
+  border: 1px solid var(--ifm-color-border);
+  border-radius: var(--ifm-border-radius-md);
+  background-color: var(--ifm-background-surface-color);
+  color: var(--ifm-color-font);
+  font-size: 1rem;
+  width: 100%; /* Take full width on small screens */
+  max-width: 300px; /* Max width for larger screens */
+}
+
+.hero-email-input::placeholder {
+  color: var(--ifm-color-secondary);
+  opacity: 0.8;
+}
+
+.hero-email-input:focus {
+  outline: none;
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 0 0 0.25rem var(--ifm-color-primary-light);
+}
+
+.hero-signup-button {
+  --ifm-button-color: var(--ifm-color-primary);
+  --ifm-button-color-hover: var(--ifm-color-primary-dark);
+}
+
+.hero-login-button {
+  --ifm-button-color: var(--ifm-color-secondary); /* Using secondary for distinction */
+  --ifm-button-color-hover: var(--ifm-color-secondary-dark);
 }
 
 /* Keyframe animations */
@@ -296,190 +376,213 @@ html[data-theme='dark'] {
 /* Chatbot styles */
 .chatbot-toggle-button {
   position: fixed;
-  bottom: var(--ifm-spacing-md); /* bottom-5 */
-  right: var(--ifm-spacing-md); /* right-5 */
-  background-color: var(--ifm-color-primary);
+  bottom: var(--ifm-spacing-lg); /* bottom-6, slightly higher */
+  right: var(--ifm-spacing-lg); /* right-6 */
+  background-color: var(--ifm-color-info-dark); /* More professional color */
   color: #fff;
   border: none;
-  border-radius: var(--ifm-border-radius-full); /* rounded-full */
-  width: 60px; /* w-[60px] */
-  height: 60px; /* h-[60px] */
-  font-size: 2rem; /* text-4xl - adjusted for better fit */
+  border-radius: var(--ifm-border-radius-full);
+  width: 50px; /* Smaller width */
+  height: 50px; /* Smaller height */
+  font-size: 1.5rem; /* Adjusted icon size */
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  box-shadow: var(--ifm-shadow-xl); /* shadow-xl */
-  z-index: 1000; /* z-[1000] */
-  transition: all 0.3s ease-in; /* transition-all duration-300 ease-in */
+  box-shadow: var(--ifm-shadow-lg); /* Subtle shadow */
+  z-index: 1000;
+  transition: all 0.3s ease-in-out; /* Smoother transition */
 }
 
 .chatbot-toggle-button:hover {
-  background-color: var(--ifm-color-primary-dark); /* hover:bg-ifm-primary-dark */
-  transform: scale(1.05); /* hover:scale-105 */
+  background-color: var(--ifm-color-info); /* Lighter on hover */
+  transform: scale(1.08); /* Slight scale for feedback */
 }
 
 .chatbot-panel {
   background-color: var(--ifm-background-color);
-  border: 1px solid var(--ifm-color-border);
-  border-radius: var(--ifm-border-radius-xl); /* rounded-xl */
-  box-shadow: var(--ifm-shadow-2xl); /* shadow-2xl */
+  border: 1px solid var(--ifm-color-emphasis-200); /* Lighter border */
+  border-radius: var(--ifm-border-radius-xl);
+  box-shadow: var(--ifm-shadow-xl); /* Softer shadow */
   overflow: hidden;
-  position: fixed; /* Added from inline style */
-  right: var(--ifm-spacing-md); /* Added from inline style */
-  bottom: var(--ifm-spacing-md); /* Added from inline style */
-  z-index: 1000; /* Added from inline style */
-  width: 360px; /* Added from inline style */
-  max-width: 90vw; /* Added from inline style */
-  height: 72vh; /* Added from inline style */
-  max-height: 600px; /* Added from inline style */
-  display: flex; /* Added from inline style */
-  flex-direction: column; /* Added from inline style */
-  animation: fadeIn 0.3s ease-out forwards; /* animate-fadeIn */
+  position: fixed;
+  right: var(--ifm-spacing-lg);
+  bottom: calc(var(--ifm-spacing-lg) + 60px); /* Position above the toggle button */
+  z-index: 1000;
+  width: 380px; /* Slightly wider */
+  max-width: 90vw;
+  height: 65vh; /* Slightly shorter */
+  max-height: 600px;
+  display: flex;
+  flex-direction: column;
+  animation: fadeInUp 0.3s ease-out forwards; /* Changed animation for appearance */
 }
 
 .chatbot-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: var(--ifm-color-primary);
-  color: #fff;
-  padding: var(--ifm-spacing-md) var(--ifm-spacing-md); /* px-4 py-3 */
+  background-color: var(--ifm-background-surface-color); /* Neutral background */
+  color: var(--ifm-color-font); /* Darker text for contrast */
+  padding: var(--ifm-spacing-sm) var(--ifm-spacing-md); /* Adjusted padding */
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
 }
 
 .chatbot-title {
-  font-size: 1.125rem; /* text-lg */
-  font-weight: 600; /* font-semibold */
+  font-size: 1.0rem; /* Slightly smaller title */
+  font-weight: 600;
+  color: var(--ifm-font-color-base); /* Ensure good contrast */
 }
 
 .chatbot-header-actions {
   display: flex;
   align-items: center;
-  gap: var(--ifm-spacing-xs); /* gap-2 */
+  gap: var(--ifm-spacing-xs);
 }
 
 .chatbot-minimize-button {
-  color: #fff;
-  opacity: 0.8;
-  padding: var(--ifm-spacing-xxs); /* p-1 */
-  border-radius: var(--ifm-border-radius-sm); /* rounded */
+  background: none;
+  border: none;
+  color: var(--ifm-color-font); /* Icon color */
+  opacity: 0.7;
+  padding: var(--ifm-spacing-xxs);
+  border-radius: var(--ifm-border-radius-sm);
+  cursor: pointer;
+  transition: opacity 0.2s ease-in-out;
 }
 
 .chatbot-minimize-button:hover {
   opacity: 1;
+  background-color: var(--ifm-hover-background-color);
 }
 
 .chatbot-icon {
-  height: 1.25rem; /* h-5 */
-  width: 1.25rem; /* w-5 */
+  height: 1rem; /* Smaller icon */
+  width: 1rem;
 }
 
 .chatbot-messages-section {
-  flex: 1; /* flex-1 */
-  padding: var(--ifm-spacing-md); /* p-4 */
+  flex: 1;
+  padding: var(--ifm-spacing-md);
   overflow-y: auto;
-  background-color: var(--ifm-background-surface-color);
+  background-color: var(--ifm-background-color); /* Consistent background */
+  display: flex;
+  flex-direction: column;
 }
 
 .chatbot-messages-list {
-  list-style: none; /* Removed default list styling */
+  list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: var(--ifm-spacing-sm); /* space-y-3 */
+  gap: var(--ifm-spacing-sm); /* Spacing between messages */
 }
 
 .chatbot-message-bubble {
-  max-width: 85%; /* max-w-[85%] */
-  padding: 0.625rem 0.75rem; /* py-2.5 px-3.5 */
-  border-radius: 1rem; /* rounded-2xl */
-  word-break: break-words; /* break-words */
-  line-height: var(--ifm-line-height-base); /* leading-normal */
+  max-width: 80%; /* Slightly narrower for better readability */
+  padding: 0.75rem 1rem; /* More padding */
+  border-radius: var(--ifm-border-radius-lg); /* Softer corners */
+  word-break: break-words;
+  line-height: var(--ifm-line-height-base);
+  font-size: 0.95rem; /* Slightly smaller font */
 }
 
 .chatbot-user-message {
-  margin-left: auto; /* ml-auto */
-  background-color: var(--ifm-color-primary-light);
-  color: var(--ifm-color-font);
-  border-bottom-right-radius: 0.25rem; /* rounded-br-sm */
+  margin-left: auto;
+  background-color: var(--ifm-color-primary); /* Use primary for user for distinction */
+  color: #fff; /* White text on primary background */
+  border-bottom-right-radius: var(--ifm-border-radius-sm); /* Keep one corner sharper */
 }
 
 .chatbot-ai-message {
-  margin-right: auto; /* mr-auto */
-  background-color: #fff;
+  margin-right: auto;
+  background-color: var(--ifm-background-surface-color); /* Neutral background for AI */
   color: var(--ifm-color-font);
-  border: 1px solid var(--ifm-color-border);
-  border-bottom-left-radius: 0.25rem; /* rounded-bl-sm */
-  box-shadow: var(--ifm-shadow-sm); /* shadow-sm */
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-bottom-left-radius: var(--ifm-border-radius-sm); /* Keep one corner sharper */
+  box-shadow: var(--ifm-shadow-sm); /* Subtle shadow */
 }
 
 .chatbot-citations {
-  font-size: 0.75rem; /* text-xs */
-  color: var(--ifm-color-secondary); /* text-ifm-secondary */
-  margin-top: var(--ifm-spacing-xxs); /* mt-1 */
-  opacity: 0.8; /* opacity-80 */
+  font-size: 0.7rem; /* Smaller citations */
+  color: var(--ifm-color-secondary);
+  margin-top: var(--ifm-spacing-xxs);
+  opacity: 0.7; /* Slightly less opaque */
 }
 
 .chatbot-info-message {
-  max-width: 85%; /* max-w-[85%] */
-  padding: 0.625rem 0.75rem; /* py-2.5 px-3.5 */
-  border-radius: 1rem; /* rounded-2xl */
+  max-width: 80%;
+  padding: 0.75rem 1rem;
+  border-radius: var(--ifm-border-radius-lg);
   background-color: var(--ifm-background-surface-color);
   color: var(--ifm-color-font);
+  font-style: italic;
+  font-size: 0.9rem;
 }
 
 .chatbot-input-form {
-  border-top: 1px solid var(--ifm-color-border);
+  border-top: 1px solid var(--ifm-color-emphasis-200);
   background-color: var(--ifm-background-color);
-  padding: var(--ifm-spacing-sm) var(--ifm-spacing-md); /* px-3 py-3 */
+  padding: var(--ifm-spacing-sm) var(--ifm-spacing-md);
   display: flex;
   align-items: center;
-  gap: var(--ifm-spacing-xs); /* gap-2 */
+  gap: var(--ifm-spacing-sm); /* Slightly smaller gap */
 }
 
 .chatbot-scope-select {
-  padding: var(--ifm-spacing-xs) var(--ifm-spacing-sm); /* py-2 px-3 */
-  border: 1px solid var(--ifm-color-border);
-  border-radius: var(--ifm-border-radius-full); /* rounded-full */
+  padding: var(--ifm-spacing-xs) var(--ifm-spacing-sm);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: var(--ifm-border-radius-md); /* Softer corners */
   background-color: var(--ifm-background-surface-color);
   color: var(--ifm-color-font);
-  font-size: 0.875rem; /* text-sm */
-  -webkit-appearance: none; /* appearance-none */
+  font-size: 0.8rem; /* Smaller font */
+  -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  padding-right: var(--ifm-spacing-lg); /* pr-8 - for custom arrow */
+  padding-right: var(--ifm-spacing-lg);
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='currentColor'%3E%3Cpath fill-rule='evenodd' d='M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z' clip-rule='evenodd'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 0.5rem center;
-  background-size: 1.5em;
+  background-size: 1.2em; /* Smaller arrow */
+  cursor: pointer;
 }
 
 .chatbot-text-input {
-  flex: 1; /* flex-1 */
-  border: 1px solid var(--ifm-color-border);
-  border-radius: var(--ifm-border-radius-full); /* rounded-full */
-  padding: 0.625rem 1rem; /* py-2.5 px-4 */
-  background-color: #fff;
+  flex: 1;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: var(--ifm-border-radius-md); /* Softer corners */
+  padding: 0.625rem 1rem;
+  background-color: var(--ifm-background-surface-color); /* Consistent background */
   color: var(--ifm-color-font);
-  font-size: 0.875rem; /* text-sm */
+  font-size: 0.9rem; /* Slightly smaller font */
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
 .chatbot-text-input:focus {
   outline: none;
-  box-shadow: 0 0 0 0.125rem var(--ifm-color-primary); /* focus:ring-2 focus:ring-ifm-primary focus:outline-none */
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 0 0 2px var(--ifm-color-primary-light); /* Accent ring */
 }
 
 .chatbot-send-button {
-  background-color: var(--ifm-color-primary);
+  background-color: var(--ifm-color-primary-dark); /* Darker primary for send */
   color: #fff;
-  border-radius: var(--ifm-border-radius-full); /* rounded-full */
-  padding: 0.625rem 1rem; /* py-2.5 px-4 */
-  font-weight: 600; /* font-semibold */
+  border: none;
+  border-radius: var(--ifm-border-radius-md); /* Softer corners */
+  padding: 0.625rem 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.chatbot-send-button:hover:not(:disabled) {
+  background-color: var(--ifm-color-primary); /* Lighter on hover */
+  transform: translateY(-1px);
 }
 
 .chatbot-send-button:disabled {
-  opacity: 0.6; /* disabled:opacity-60 */
+  opacity: 0.5; /* More visible disabled state */
   cursor: not-allowed;
 }
 

@@ -1,13 +1,13 @@
 :root {
   /* Colors - based on Docusaurus/Tailwind initial theme */
-  --ifm-color-primary: #337ab7; /* Example primary color */
-  --ifm-color-primary-dark: #286090;
-  --ifm-color-primary-light: #52a1d9;
+  --ifm-color-primary: #6a0dad; /* Royal Purple */
+  --ifm-color-primary-dark: #5a0bac;
+  --ifm-color-primary-light: #8a2be2;
 
   --ifm-background-color: #ffffff; /* Light mode background */
-  --ifm-background-surface-color: #f0f2f5; /* Light mode surface */
+  --ifm-background-surface-color: #f8f8f8; /* Light mode surface */
   --ifm-color-border: #e0e4e8;
-  --ifm-color-font: #242526; /* Default font color */
+  --ifm-color-font: #333333; /* Default font color */
   --ifm-color-secondary: #6c757d;
   --ifm-color-danger: #dc3545;
 
@@ -44,14 +44,14 @@
 
 /* Dark mode variables - will be applied by a class on <html> or <body> */
 html[data-theme='dark'] {
-  --ifm-color-primary: #52a1d9; /* Dark mode primary */
-  --ifm-color-primary-dark: #337ab7;
-  --ifm-color-primary-light: #7cb3e6;
+  --ifm-color-primary: #9370db; /* Dark mode primary (Medium Purple) */
+  --ifm-color-primary-dark: #7b68ee;
+  --ifm-color-primary-light: #ba55d3;
 
-  --ifm-background-color: #1a1c1f; /* Dark mode background */
-  --ifm-background-surface-color: #2b2d30; /* Dark mode surface */
-  --ifm-color-border: #44484f;
-  --ifm-color-font: #f5f6f7; /* Dark mode font color */
+  --ifm-background-color: #121212; /* Dark mode background (near black) */
+  --ifm-background-surface-color: #1e1e1e; /* Dark mode surface */
+  --ifm-color-border: #333333;
+  --ifm-color-font: #e0e0e0; /* Dark mode font color */
   --ifm-color-secondary: #adb5bd;
   --ifm-color-danger: #ef4444; /* Brighter danger for dark mode */
 

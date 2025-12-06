@@ -1,0 +1,142 @@
+/* Custom styles for Auth Pages */
+
+.auth-page-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - var(--ifm-navbar-height) - var(--ifm-footer-height)); /* Adjust based on navbar/footer height */
+  padding: var(--ifm-spacing-vertical) var(--ifm-spacing-horizontal);
+  background-color: var(--ifm-background-color);
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 450px; /* Increased max-width for better form readability */
+  border-radius: var(--ifm-border-radius-lg);
+  box-shadow: var(--ifm-shadow-md); /* Softer shadow */
+  background-color: var(--ifm-background-surface-color);
+  overflow: hidden; /* Ensures rounded corners apply to children */
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-card-header {
+  background-color: var(--ifm-color-primary); /* Primary brand color for header */
+  color: #fff;
+  padding: var(--ifm-spacing-md);
+  text-align: center;
+}
+
+.auth-card-header h3 {
+  color: #fff; /* Ensure heading is white */
+  margin-bottom: 0; /* Remove default margin */
+}
+
+.auth-card-body {
+  padding: var(--ifm-spacing-lg); /* More padding inside the body */
+}
+
+.auth-card-footer {
+  padding: var(--ifm-spacing-md);
+  text-align: center;
+  border-top: 1px solid var(--ifm-color-emphasis-200); /* Subtle separator */
+  background-color: var(--ifm-background-color); /* Lighter footer background */
+  font-size: var(--ifm-font-size-sm);
+}
+
+.auth-card-footer a {
+  font-weight: 600;
+  color: var(--ifm-color-primary); /* Link color */
+}
+
+.auth-card-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Form control enhancements */
+.form-control {
+  display: block;
+  width: 100%;
+  padding: var(--ifm-spacing-sm);
+  font-size: var(--ifm-font-size-base);
+  line-height: var(--ifm-line-height-base);
+  color: var(--ifm-color-gray-700); /* Darker text for inputs */
+  background-color: var(--ifm-color-white); /* White background for inputs */
+  background-clip: padding-box;
+  border: 1px solid var(--ifm-color-emphasis-300); /* Softer border */
+  border-radius: var(--ifm-border-radius);
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+html[data-theme='dark'] .form-control {
+  color: var(--ifm-color-font);
+  background-color: var(--ifm-background-surface-color);
+  border-color: var(--ifm-color-emphasis-500);
+}
+
+
+.form-control:focus {
+  color: var(--ifm-color-gray-700);
+  background-color: var(--ifm-color-white);
+  border-color: var(--ifm-color-primary);
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(var(--ifm-color-primary-rgb), 0.25); /* Subtle focus ring */
+}
+
+html[data-theme='dark'] .form-control:focus {
+  color: var(--ifm-color-font);
+  background-color: var(--ifm-background-surface-color);
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 0 0 0.2rem rgba(var(--ifm-color-primary-rgb), 0.25);
+}
+
+.form-label {
+  display: inline-block;
+  margin-bottom: var(--ifm-spacing-xs);
+  font-weight: 600;
+  color: var(--ifm-font-color-base);
+}
+
+.text--danger {
+  color: var(--ifm-color-danger);
+  font-size: var(--ifm-font-size-sm);
+  margin-top: var(--ifm-spacing-xxs);
+}
+
+.auth-submit-button {
+  margin-top: var(--ifm-spacing-md);
+  padding: var(--ifm-spacing-sm) var(--ifm-spacing-md);
+  font-size: var(--ifm-font-size-lg);
+  font-weight: 600;
+  border-radius: var(--ifm-border-radius);
+}
+
+.auth-header-title {
+  font-size: 2.5rem; /* Larger title */
+  font-weight: 700;
+  color: #fff;
+}
+
+html[data-theme='dark'] .auth-header-title {
+  color: var(--ifm-heading-color); /* Adjust for dark mode if needed */
+}
+
+/* Specific styles for Signup/Signin Layout */
+.hero-auth-header {
+  background-color: var(--ifm-background-color); /* Neutral background */
+  color: var(--ifm-font-color-base);
+  padding: var(--ifm-spacing-xl) 0; /* More vertical padding */
+  border-bottom: 1px solid var(--ifm-color-emphasis-200); /* Subtle separator */
+}
+
+.hero-auth-header h1 {
+  margin-bottom: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--ifm-font-color-base);
+}
+
+html[data-theme='dark'] .hero-auth-header {
+  background-color: var(--ifm-background-color);
+}
