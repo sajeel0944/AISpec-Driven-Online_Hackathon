@@ -20,7 +20,7 @@ qdrant_client = QdrantClient(
     api_key=os.getenv("QDRANT_API_KEY")
 )
 # ----------------------------
-GEMINI_API_KEY : str = os.getenv("GEMINI_API_KEY")
+GEMINI_API_KEY : str = os.getenv("OPENAI_API_KEY")
 MODEL : str = "gemini-2.5-flash"
 COLLECTION_NAME = "hackathonData"
 VECTOR_DIM = 768
