@@ -1,12 +1,10 @@
 import React from 'react';
 import {useThemeConfig} from '@docusaurus/theme-common';
 import {
-  splitNavbarItems,
-  useNavbarItemComponent, // This import might be unused depending on Docusaurus internal structure.
+  splitNavbarItems, // This import might be unused depending on Docusaurus internal structure.
 } from '@docusaurus/theme-common/internal';
 import NavbarItem from '@theme/NavbarItem';
 import { useAuth } from '@site/src/contexts/AuthContext';
-import Link from '@docusaurus/Link';
 import { useHistory } from '@docusaurus/router';
 
 function NavbarItems({items}) {
@@ -45,7 +43,7 @@ export default function NavbarContent() {
           key="welcome"
           label={`Welcome, ${user?.username || user?.email || 'User'}`}
           position="right"
-          is  button
+          is="button"
         />,
         <NavbarItem
           key="logout"
@@ -53,7 +51,7 @@ export default function NavbarContent() {
           position="right"
           onClick={handleLogout}
           className="button button--secondary button--sm"
-          is  button
+          is="button"
         />,
       ]
     : [
@@ -63,7 +61,7 @@ export default function NavbarContent() {
           to="/signup"
           position="right"
           className="button button--primary button--sm"
-          is  button
+          is="button"
         />,
         <NavbarItem
           key="signin"
@@ -71,7 +69,7 @@ export default function NavbarContent() {
           to="/signin"
           position="right"
           className="button button--secondary button--sm margin-left--sm"
-          is  button
+          is="button"
         />,
       ];
 

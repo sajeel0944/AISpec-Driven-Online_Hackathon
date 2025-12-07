@@ -30,7 +30,7 @@ export default function Chatbot({ chapterId }: ChatbotProps): JSX.Element {
 
     const newUserMessage: ChatMessage = {
       id: uuidv4(),
-      type: "user",
+      role: "user",
       text: inputMessage,
       timestamp: new Date().toISOString(),
     };
@@ -40,7 +40,7 @@ export default function Chatbot({ chapterId }: ChatbotProps): JSX.Element {
     setError(null);
 
     const formattedMessages = [...messages, newUserMessage].map((msg) => ({
-      role: msg.type, // Mapping 'user'/'ai' to 'role' field
+      role: msg.role, // Mapping 'user'/'ai' to 'role' field
       content: msg.text,
     }));
     try {
@@ -56,13 +56,13 @@ export default function Chatbot({ chapterId }: ChatbotProps): JSX.Element {
         throw new Error(`Error: ${response.status} ${response.statusText}`);
       }
 
-      const data: ChatResponse = await response.json();
+      const data = await response.text();
       const newAiMessage: ChatMessage = {
         id: uuidv4(),
-        type: "ai",
-        text: data.response,
+        role: "assistant",
+        text: data,
         timestamp: new Date().toISOString(),
-        citations: data.citations,
+        citations: [""],
       };
       setMessages((prevMessages) => [...prevMessages, newAiMessage]);
     } catch (err) {
@@ -70,7 +70,7 @@ export default function Chatbot({ chapterId }: ChatbotProps): JSX.Element {
       console.error("Chatbot error:", err);
       const errorMessage: ChatMessage = {
         id: uuidv4(),
-        type: "ai",
+        role: "assistant",
         text: `Error: ${err.message}`,
         timestamp: new Date().toISOString(),
       };
@@ -153,11 +153,11 @@ export default function Chatbot({ chapterId }: ChatbotProps): JSX.Element {
                 <li
                   key={msg.id}
                   className={`chatbot-message-bubble ${
-                    msg.type === "user"
+                    msg.role === "user"
                       ? "chatbot-user-message"
                       : "chatbot-ai-message"
                   }`}
-                  role={msg.type === "user" ? "article" : "article"}
+                  role={msg.role === "user" ? "article" : "article"}
                 >
                   <div className="whitespace-pre-wrap">{msg.text}</div>
                   {msg.citations && msg.citations.length > 0 && (

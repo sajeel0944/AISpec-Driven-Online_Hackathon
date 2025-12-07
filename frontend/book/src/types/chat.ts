@@ -1,8 +1,14 @@
-export type ChatMessageType = 'user' | 'ai';
+// Message format for backend communication
+export type Role = "user" | "assistant";
+
+export interface Message {
+  role: Role;
+  content: string;
+}
 
 export interface ChatMessage {
   id: string
-  type: ChatMessageType;
+  role: Role;
   text: string;
   timestamp: string;
   citations?: string[];
