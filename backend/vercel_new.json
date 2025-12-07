@@ -1,5 +1,0 @@
-{
-  "version": 2,
-  "buildCommand": "pip install --no-cache-dir -r requirements.txt",
-  "framework": "fastapi"
-}

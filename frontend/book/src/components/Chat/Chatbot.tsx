@@ -57,10 +57,22 @@ export default function Chatbot({ chapterId }: ChatbotProps): JSX.Element {
       }
 
       const data = await response.text();
+      
+      // Clean up the response: remove escape sequences and parse properly
+      let cleanedText = data;
+      try {
+        // Try to parse as JSON first (in case backend sends JSON)
+        const jsonData = JSON.parse(data);
+        cleanedText = typeof jsonData === 'string' ? jsonData : JSON.stringify(jsonData);
+      } catch {
+        // If not JSON, treat as plain text and remove escape sequences
+        cleanedText = data.replace(/\\n/g, '\n').replace(/\\t/g, '\t').replace(/\\\//g, '/');
+      }
+      
       const newAiMessage: ChatMessage = {
         id: uuidv4(),
         role: "assistant",
-        text: data,
+        text: cleanedText.trim(),
         timestamp: new Date().toISOString(),
         citations: [""],
       };
@@ -98,6 +110,28 @@ export default function Chatbot({ chapterId }: ChatbotProps): JSX.Element {
       document.addEventListener("keydown", onKey);
     }
     return () => document.removeEventListener("keydown", onKey);
+  }, [isOpen]);
+
+  // Listen for text selection on the page and add it to input
+  useEffect(() => {
+    const handleTextSelection = () => {
+      const selectedText = window.getSelection()?.toString().trim();
+      if (selectedText && selectedText.length > 0) {
+        setInputMessage("Explain this :"+selectedText);
+        // Open chatbot if text is selected
+        if (!isOpen) {
+          setIsOpen(true);
+        }
+      }
+    };
+
+    document.addEventListener("mouseup", handleTextSelection);
+    document.addEventListener("touchend", handleTextSelection);
+
+    return () => {
+      document.removeEventListener("mouseup", handleTextSelection);
+      document.removeEventListener("touchend", handleTextSelection);
+    };
   }, [isOpen]);
 
   return (
