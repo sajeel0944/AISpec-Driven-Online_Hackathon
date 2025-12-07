@@ -7,7 +7,7 @@ requires-python = ">=3.10"
 dependencies = [
     "python-dotenv==1.0.0",
     "fastapi==0.104.1",
-    "openai-agents==0.27.8",
+    "openai-agents==0.6.2",
     "qdrant-client>=1.16.1",
     "uvicorn==0.24.0",
     "pydantic==1.10.12",
