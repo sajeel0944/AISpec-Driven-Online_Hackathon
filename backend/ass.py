@@ -82,34 +82,25 @@ async def retrieve_from_qdrant(user_query: str) -> str:
     return "\n---\n".join(texts)
 
 # ------------------ Agent Setup ------------------ #
-agent = Agent(
-    name="Assistant",
-    instructions="""
-    You are a helpful book assistant. Your role is to answer user queries related to books.
-    When relevant, use the 'retrieve_from_qdrant' tool to fetch information from the vector database,
-    so you can provide accurate book-related information to the user.
-    """
-,
-    model=model,
-    tools=[retrieve_from_qdrant],
-    model_settings=ModelSettings(tool_choice="required")
-)  
+# agent = Agent(
+#     name="Assistant",
+#     instructions="""
+#     You are a helpful book assistant. Your role is to answer user queries related to books.
+#     When relevant, use the 'retrieve_from_qdrant' tool to fetch information from the vector database,
+#     so you can provide accurate book-related information to the user.
+#     """
+# ,
+#     model=model,
+#     tools=[retrieve_from_qdrant],
+#     model_settings=ModelSettings(tool_choice="required")
+# )  
 
-# ------------------runner  ------------------ #
-def main_assistant(messages: list[dict]):
-    try:
-        res = Runner.run_sync(agent, input=messages)
-        return res.final_output
-    except Exception as e:
-        return f"Sorry, I'm currently unavailable. Please try again in a few moments. {e}"
-
-
+# # ------------------runner  ------------------ #
+# def main_assistant(messages: list[dict]):
+#     try:
+#         res = Runner.run_sync(agent, input=messages)
+#         return res.final_output
+#     except Exception as e:
+#         return f"Sorry, I'm currently unavailable. Please try again in a few moments. {e}"
 
 
-
-# [
-#    {
-#        "role": "user",
-#        "content": "hello"
-#      }
-#  ]
