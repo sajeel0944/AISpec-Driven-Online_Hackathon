@@ -2,17 +2,17 @@
 .env*.local
 .env
 
-# .uv.lock
-# uv.lock
+.uv.lock
+uv.lock
 
-# requirements_simple.txt
-# .requirements_simple.txt
+requirements_simple.txt
+.requirements_simple.txt
 
-# runtime.txt
-# .runtime.txt
+runtime.txt
+.runtime.txt
 
-# vercel.json.bak
-# .vercel.json.bak
+vercel.json.bak
+.vercel.json.bak
 
-# vercel_new.json
-# .vercel_new.json
+vercel_new.json
+.vercel_new.json
