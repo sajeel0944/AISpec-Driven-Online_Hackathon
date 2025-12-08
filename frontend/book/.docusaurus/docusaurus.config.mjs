@@ -7,6 +7,9 @@ export default {
   "title": "My Site",
   "tagline": "Dinosaurs are cool",
   "favicon": "img/favicon.ico",
+  "customFields": {
+    "apiUrl": "https://ai-spec-driven-online-hackathon-ptt.vercel.app"
+  },
   "future": {
     "v4": {
       "removeLegacyPostBuildHeadAttribute": true,
@@ -377,7 +380,6 @@ export default {
   "staticDirectories": [
     "static"
   ],
-  "customFields": {},
   "plugins": [],
   "themes": [],
   "scripts": [],

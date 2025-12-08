@@ -18,7 +18,9 @@ export default function Chatbot({ chapterId }: ChatbotProps): JSX.Element {
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const panelRef = useRef<HTMLDivElement | null>(null);
   const inputRef = useRef<HTMLInputElement | null>(null);
+const API_URL = siteConfig.customFields.apiUrl;
 
+  console.log("API_URL:", API_URL);
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
