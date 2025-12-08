@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect, JSX } from "react";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { v4 as uuidv4 } from "uuid";
-import { ChatMessage, ChatResponse, ChatScope } from "@site/src/types/chat";
+import { ChatMessage, ChatScope } from "@site/src/types/chat";
 
 interface ChatbotProps {
   chapterId?: string; // Optional chapter ID for chapter-scoped queries
@@ -18,9 +18,8 @@ export default function Chatbot({ chapterId }: ChatbotProps): JSX.Element {
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const panelRef = useRef<HTMLDivElement | null>(null);
   const inputRef = useRef<HTMLInputElement | null>(null);
-const API_URL = siteConfig.customFields.apiUrl;
+  const API_URL = siteConfig.customFields.apiUrl;
 
-  console.log("API_URL:", API_URL);
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
@@ -46,7 +45,7 @@ const API_URL = siteConfig.customFields.apiUrl;
       content: msg.text,
     }));
     try {
-      const response = await fetch(`http://localhost:8000/ai_assistant`, {
+      const response = await fetch(`${API_URL}/ai_assistant`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -59,18 +58,22 @@ const API_URL = siteConfig.customFields.apiUrl;
       }
 
       const data = await response.text();
-      
+
       // Clean up the response: remove escape sequences and parse properly
       let cleanedText = data;
       try {
         // Try to parse as JSON first (in case backend sends JSON)
         const jsonData = JSON.parse(data);
-        cleanedText = typeof jsonData === 'string' ? jsonData : JSON.stringify(jsonData);
+        cleanedText =
+          typeof jsonData === "string" ? jsonData : JSON.stringify(jsonData);
       } catch {
         // If not JSON, treat as plain text and remove escape sequences
-        cleanedText = data.replace(/\\n/g, '\n').replace(/\\t/g, '\t').replace(/\\\//g, '/');
+        cleanedText = data
+          .replace(/\\n/g, "\n")
+          .replace(/\\t/g, "\t")
+          .replace(/\\\//g, "/");
       }
-      
+
       const newAiMessage: ChatMessage = {
         id: uuidv4(),
         role: "assistant",
@@ -119,7 +122,7 @@ const API_URL = siteConfig.customFields.apiUrl;
     const handleTextSelection = () => {
       const selectedText = window.getSelection()?.toString().trim();
       if (selectedText && selectedText.length > 0) {
-        setInputMessage("Explain this :"+selectedText);
+        setInputMessage("Explain this :" + selectedText);
         // Open chatbot if text is selected
         if (!isOpen) {
           setIsOpen(true);
