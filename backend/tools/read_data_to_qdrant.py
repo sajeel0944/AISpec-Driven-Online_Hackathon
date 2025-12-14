@@ -6,7 +6,6 @@ from dotenv import load_dotenv
 import google.generativeai as genai
 from qdrant_client import QdrantClient
 from qdrant_client.http import models as rest
-import rich
 
 load_dotenv()
 
