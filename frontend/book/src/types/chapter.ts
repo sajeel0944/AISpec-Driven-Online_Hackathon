@@ -6,7 +6,7 @@ export interface ChapterTranslationRequest {
 export interface ChapterTranslationResponse {
   translatedContent: string;
 }
-
+    
 export enum PersonalizationTone {
   Formal = 'formal',
   Informal = 'informal',
