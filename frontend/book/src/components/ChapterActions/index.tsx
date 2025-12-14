@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { JSX, useState } from 'react';
 import TranslationButton from './TranslationButton';
 import PersonalizationButton from './PersonalizationButton'; // Import the new component
 

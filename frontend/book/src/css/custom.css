@@ -256,6 +256,52 @@ html[data-theme='dark'] {
   box-shadow: var(--ifm-shadow-lg);
 }
 
+/* Improved hero and CTA styles for modern landing page */
+.hero-cta-primary {
+  display: inline-block;
+  background-color: #fff;
+  color: var(--ifm-color-primary-dark);
+  padding: 0.85rem 1.25rem;
+  border-radius: 10px;
+  font-weight: 700;
+  box-shadow: 0 6px 18px rgba(32,33,36,0.12);
+  text-decoration: none;
+  margin-right: 12px;
+}
+.hero-cta-primary:hover { transform: translateY(-3px); }
+.hero-cta-secondary {
+  display: inline-block;
+  background: transparent;
+  color: rgba(255,255,255,0.95);
+  border: 1px solid rgba(255,255,255,0.12);
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+}
+.hero-features-quick { margin-top: 14px; display:flex; gap:10px; flex-wrap:wrap; }
+.pill { background: rgba(255,255,255,0.12); color: #fff; padding:6px 10px; border-radius: 999px; font-size:0.85rem; }
+
+/* Features grid: make row act as a responsive grid */
+.homepage-features-section .row { display:grid; grid-template-columns: repeat(1, 1fr); gap: 28px; }
+@media (min-width: 768px) { .homepage-features-section .row { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1100px) { .homepage-features-section .row { grid-template-columns: repeat(3, 1fr); } }
+
+.feature-item-card { background: var(--ifm-background-surface-color); border-radius: 12px; padding: 28px; box-shadow: 0 8px 24px rgba(16,24,40,0.06); border: 1px solid var(--ifm-color-border); transition: transform 220ms ease, box-shadow 220ms ease; }
+.feature-item-card h3 { margin-top: 12px; margin-bottom: 8px; }
+.feature-item-card p { color: var(--ifm-color-secondary); }
+
+/* Improve hero layout responsiveness */
+@media (max-width: 995px) {
+  .hero-content-wrapper { flex-direction: column-reverse; align-items: center; text-align:center; }
+  .hero-image-container { width: 80%; margin-bottom: 18px; }
+  .hero-title { font-size: 1.8rem; }
+}
+
+/* Accessibility: focus visible */
+*:focus { outline: none; }
+a:focus, button:focus, input:focus { box-shadow: 0 0 0 4px rgba(108,99,255,0.12); }
+
+
 .feature-item-svg {
   width: 100%;
   max-width: 200px;

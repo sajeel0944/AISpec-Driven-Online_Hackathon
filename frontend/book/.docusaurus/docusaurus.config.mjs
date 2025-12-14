@@ -8,7 +8,7 @@ export default {
   "tagline": "Dinosaurs are cool",
   "favicon": "img/favicon.ico",
   "customFields": {
-    "apiUrl": "https://ai-spec-driven-online-hackathon-ptt.vercel.app"
+    "apiUrl": "http://localhost:8000"
   },
   "future": {
     "v4": {
@@ -41,8 +41,13 @@ export default {
     "locales": [
       "en"
     ],
-    "path": "i18n",
-    "localeConfigs": {}
+    "localeConfigs": {
+      "ur": {
+        "label": "اردو",
+        "direction": "rtl"
+      }
+    },
+    "path": "i18n"
   },
   "presets": [
     [

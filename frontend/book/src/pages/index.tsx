@@ -15,13 +15,15 @@ function HomepageHeader() {
           <Heading as="h1" className="hero__title hero-title">
             Physical AI & Humanoid Robotics
           </Heading>
-          <p className="hero__subtitle hero-subtitle">An Interactive Journey into the Future of AI and Robotics</p>
+          <p className="hero__subtitle hero-subtitle">An interactive, practical guide to building embodied AI systems — clear explanations, hands-on examples, and real-world case studies.</p>
           <div className="hero-actions">
-            <Link
-              className="button button--lg hero-button"
-              to="/docs/intro"> {/* Link to your book's intro or first chapter */}
-              Start Reading Now 🚀
-            </Link>
+            <Link className="hero-cta-primary" to="/docs/intro">Start Reading Now</Link>
+            <Link className="hero-cta-secondary" to="/blog">Read the Blog</Link>
+          </div>
+          <div className="hero-features-quick">
+            <span className="pill">Hands-on Guides</span>
+            <span className="pill">Case Studies</span>
+            <span className="pill">Practical Examples</span>
           </div>
         </div>
         <div className="hero-image-container"> {/* Container for the robot image */}

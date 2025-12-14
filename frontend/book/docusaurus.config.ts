@@ -37,6 +37,12 @@ const config: Config = {
   i18n: {
     defaultLocale: "en",
     locales: ["en"],
+    localeConfigs: {
+    ur: {
+      label: 'اردو',
+      direction: 'rtl',
+    },
+  },
   },
 
   presets: [

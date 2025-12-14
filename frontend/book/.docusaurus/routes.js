@@ -123,6 +123,11 @@ export default [
     exact: true
   },
   {
+    path: '/forgot-password',
+    component: ComponentCreator('/forgot-password', 'c2e'),
+    exact: true
+  },
+  {
     path: '/markdown-page',
     component: ComponentCreator('/markdown-page', '3d7'),
     exact: true

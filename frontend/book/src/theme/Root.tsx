@@ -1,5 +1,4 @@
-import React, { useState, useEffect, JSX } from 'react';
-import type {PropsWithChildren}from '@docusaurus/types';
+import React, { useState, useEffect, JSX, PropsWithChildren } from 'react';
 import { useLocation } from '@docusaurus/router'; // Import useLocation
 import Chatbot from '@site/src/components/Chat/Chatbot'; // Import the Chatbot component
 import { AuthProvider } from '@site/src/contexts/AuthContext'; // Import AuthProvider

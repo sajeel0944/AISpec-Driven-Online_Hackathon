@@ -1,13 +1,13 @@
-import React from 'react';
-import {useThemeConfig} from '@docusaurus/theme-common';
+import React, { useState, useEffect } from "react";
+import { useThemeConfig } from "@docusaurus/theme-common";
 import {
   splitNavbarItems, // This import might be unused depending on Docusaurus internal structure.
-} from '@docusaurus/theme-common/internal';
-import NavbarItem from '@theme/NavbarItem';
-import { useAuth } from '@site/src/contexts/AuthContext';
-import { useHistory } from '@docusaurus/router';
+} from "@docusaurus/theme-common/internal";
+import NavbarItem from "@theme/NavbarItem";
+import { useHistory } from "@docusaurus/router";
+import { UserData } from "@site/src/types/globle";
 
-function NavbarItems({items}) {
+function NavbarItems({ items }) {
   return (
     <>
       {items.map((item, i) => (
@@ -17,7 +17,7 @@ function NavbarItems({items}) {
   );
 }
 
-function NavbarContentLayout({left, right}) {
+function NavbarContentLayout({ left, right }) {
   return (
     <div className="navbar__inner">
       <div className="navbar__items">{left}</div>
@@ -27,24 +27,86 @@ function NavbarContentLayout({left, right}) {
 }
 
 export default function NavbarContent() {
-  const {navbar: {items}, } = useThemeConfig();
+  const {
+    navbar: { items },
+  } = useThemeConfig();
   const [leftItems, rightItems] = splitNavbarItems(items);
-  const { isAuthenticated, logout, user } = useAuth();
   const history = useHistory();
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
+  const [lang, setLang] = useState<string>("en");
+  const [userData, setUserData] = useState<UserData>();
+
+  useEffect(() => {
+    const userData = localStorage.getItem("userData");
+    if (userData) {
+      setIsAuthenticated(true);
+      setUserData(JSON.parse(userData));
+    } else {
+      setIsAuthenticated(false);
+    }
+  }, []);
+
+  const changeLanguage = (newLang: string) => {
+    console.debug("[Navbar] changeLanguage", newLang);
+    try {
+      localStorage.setItem("bookLang", newLang);
+    } catch (e) {
+      // ignore
+    }
+    setLang(newLang);
+    const ev = new CustomEvent("bookLanguageChanged", {
+      detail: { lang: newLang },
+    });
+    console.debug("[Navbar] dispatching", ev);
+    window.dispatchEvent(ev);
+  };
 
   const handleLogout = () => {
-    logout();
-    history.push('/'); // Redirect to home page after logout
+    setIsAuthenticated(false);
+    localStorage.removeItem("userData");
+    history.push("/"); // Redirect to home page after logout
   };
 
   const authItems = isAuthenticated
     ? [
         <NavbarItem
           key="welcome"
-          label={`Welcome, ${user?.username || user?.email || 'User'}`}
+          label={`${userData.username}`}
           position="right"
           is="button"
         />,
+        <div
+          className="navbar__language-toggle"
+          style={{
+            display: "inline-flex",
+            gap: 8,
+            alignItems: "center",
+            marginLeft: 8,
+          }}
+        >
+          <NavbarItem
+            key="lang-en"
+            label={"English"}
+            position="right"
+            is="button"
+            className={
+              "button button--sm " +
+              (lang === "en" ? "button--primary" : "button--outline")
+            }
+            onClick={() => changeLanguage("en")}
+          />
+          <NavbarItem
+            key="lang-ur"
+            label={"اردو"}
+            position="right"
+            is="button"
+            className={
+              "button button--sm " +
+              (lang === "ur" ? "button--primary" : "button--outline")
+            }
+            onClick={() => changeLanguage("ur")}
+          />
+        </div>,
         <NavbarItem
           key="logout"
           label="Logout"
@@ -79,7 +141,9 @@ export default function NavbarContent() {
       right={
         <>
           <NavbarItems items={rightItems} />
-          {authItems.map((item, i) => React.cloneElement(item, { key: `auth-item-${i}` }))}
+          {authItems.map((item, i) =>
+            React.cloneElement(item, { key: `auth-item-${i}` })
+          )}
         </>
       }
     />

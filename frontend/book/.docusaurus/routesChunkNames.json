@@ -284,6 +284,13 @@
     },
     "content": "be188728"
   },
+  "/forgot-password-c2e": {
+    "__comp": "ed3977e5",
+    "__context": {
+      "plugin": "a7456010"
+    },
+    "config": "5e9f5e1a"
+  },
   "/markdown-page-3d7": {
     "__comp": "1f391b9e",
     "__context": {
