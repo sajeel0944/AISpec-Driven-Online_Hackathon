@@ -10,7 +10,7 @@ from tools.read_data_to_qdrant import search_qdrant
 #----------------------------------------------------------------
 
 load_dotenv()
-set_tracing_disabled(disabled=False)
+set_tracing_disabled(disabled=True)
 
 # ----------------------------------------------------------------
 
