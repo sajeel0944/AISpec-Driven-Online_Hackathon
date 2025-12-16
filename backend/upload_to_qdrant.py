@@ -11,13 +11,13 @@ load_dotenv()
 # ------------------- Configuration ---------------------------------------------
 
 QDRANT_API_KEY = os.getenv("QDRANT_API_KEY")
-OPENAI_API_KEY = os.getenv("GEMINI_API_KEY")
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 QDRANT_URL = os.getenv("QDRANT_URL")
 COLLECTION_NAME = "hackathonData"
 
 # ------------------- Initialize Clients ------------------------------------------
 
-genai.configure(api_key=OPENAI_API_KEY)
+genai.configure(api_key=GEMINI_API_KEY)
 
 qdrant = QdrantClient(
     url = QDRANT_URL,   

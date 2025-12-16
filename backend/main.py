@@ -23,7 +23,11 @@ app.add_middleware(
 def sign_up(user_data: SignupType):
     try:
         create = SignUp(user_data)
-        return create.save_to_db()
+        check = create.validate()
+        if check:
+            return create.save_to_db()
+        else:
+            return {"status": "isAlready", "message": "User already exists."}
     except Exception as e:
         return {"status": "error", "message": str(e)}
     

@@ -10,14 +10,14 @@ set_tracing_disabled(disabled=True)
 
 #----------------------------------------------------------------
 
-GEMINI_API_KEY : str = os.getenv("GEMINI_API_KEY")
-MODEL : str = "gemini-2.5-flash"
-
+GROQ_API_KEY : str = os.getenv("GROQ_API_KEY")
+MODEL : str = "openai/gpt-oss-20b"
+ 
 #----------------------------------------------------------------
 
 external_client = AsyncOpenAI(
-    api_key = GEMINI_API_KEY,
-    base_url = "https://generativelanguage.googleapis.com/v1beta/openai/"
+    api_key = GROQ_API_KEY,
+    base_url = "https://api.groq.com/openai/v1"
 )
 
 model = OpenAIChatCompletionsModel(

@@ -2,6 +2,7 @@ import React, { useState, useEffect, JSX, PropsWithChildren } from 'react';
 import { useLocation } from '@docusaurus/router'; // Import useLocation
 import Chatbot from '@site/src/components/Chat/Chatbot'; // Import the Chatbot component
 import { AuthProvider } from '@site/src/contexts/AuthContext'; // Import AuthProvider
+import CustomFooter from '../components/CustomFooter';
 
 export default function Root({children}: PropsWithChildren): JSX.Element {
   const location = useLocation();
@@ -31,6 +32,7 @@ export default function Root({children}: PropsWithChildren): JSX.Element {
           {displayChildren}
         </div>
         {showChatbot && <Chatbot />}
+        <CustomFooter />
       </div>
     </AuthProvider>
   );

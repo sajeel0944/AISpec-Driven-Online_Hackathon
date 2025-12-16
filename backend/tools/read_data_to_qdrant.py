@@ -12,13 +12,13 @@ load_dotenv()
 # ------------------- Configuration ---------------------------------------------
 
 QDRANT_API_KEY = os.getenv("QDRANT_API_KEY")
-OPENAI_API_KEY = os.getenv("GEMINI_API_KEY")
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 QDRANT_URL = os.getenv("QDRANT_URL")
 COLLECTION_NAME = "hackathonData"
 
 # ------------------- Initialize Clients ------------------------------------------
 
-genai.configure(api_key=OPENAI_API_KEY)
+genai.configure(api_key=GEMINI_API_KEY)
 
 qdrant = QdrantClient(
     url = QDRANT_URL,   
@@ -28,16 +28,19 @@ qdrant = QdrantClient(
 # ------------------- Function to get Embedding ------------------ #
 
 def get_embedding(text):
-    embedding = genai.embed_content(
-        model="models/text-embedding-004",  # Gemini embedding model
-        content=text
-    )
-    return embedding["embedding"]
+    try:
+        embedding = genai.embed_content(
+            model="models/text-embedding-004",  # Gemini embedding model
+            content=text
+        )
+        return embedding["embedding"]
+    except Exception as e:
+        return "Error: " + str(e)
 
 # ------------------- Search Qdrant ------------------ #
 
 @function_tool
-def search_qdrant(query: str, limit: int = 3):
+def search_qdrant(query: str, limit: int = 1):
     """
     Retrieve relevant text entries from the Qdrant vector database.
 
@@ -48,7 +51,7 @@ def search_qdrant(query: str, limit: int = 3):
     Args:
         query (str): The query string provided by the user.
         limit (int, optional): The maximum number of results to return.
-            Defaults to 3.
+            Defaults to 1.
 
     Returns:
         list[str]: A list of retrieved text payloads. If an error occurs,

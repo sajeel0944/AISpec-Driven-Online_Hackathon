@@ -94,6 +94,8 @@ function SignUp() {
         localStorage.setItem("userData", JSON.stringify(response.data));
 
         history.push("/docs/intro");
+      } else if (response.status == "isAlready") {
+        alert("User already exists. Please change your user name or email.");
       } else {
         console.error("Signup error:", response.message);
       }

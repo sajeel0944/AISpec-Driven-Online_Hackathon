@@ -11,6 +11,27 @@ mongodp  = os.getenv("mongodp")
 @dataclass
 class SignUp:
     data: SignupType
+
+    def validate(self) -> bool:
+        try:
+            with MongoClient(mongodp, tls=True) as client:
+                db = client["AiDrivenDevelopmentHackathon"]
+                collection = db["signup"]
+
+                user = collection.find_one({
+                    "$or": [
+                        {"email": self.data.email},
+                        {"username": self.data.username}
+                    ]
+                })
+
+                if user:
+                    return False
+                else:
+                    return True
+
+        except Exception as e:
+            return False
     
     def save_to_db(self):
         try:

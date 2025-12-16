@@ -13,6 +13,10 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       if (!isSignInPage && !isHomePage) {
         window.location.href = "/signin";
       }
+    }else{
+      if (isSignInPage) {
+        window.location.href = "/docs/intro";
+      }
     }
   }, [isSignInPage, isHomePage]);
 

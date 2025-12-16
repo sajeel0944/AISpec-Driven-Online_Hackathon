@@ -87,17 +87,13 @@ export default {
       "disableSwitch": false
     },
     "navbar": {
-      "title": "My Site",
-      "logo": {
-        "alt": "My Site Logo",
-        "src": "img/logo.svg"
-      },
+      "hideOnScroll": true,
       "items": [
         {
-          "type": "docSidebar",
-          "sidebarId": "tutorialSidebar",
+          "type": "doc",
+          "docId": "intro",
           "position": "left",
-          "label": "Tutorial"
+          "label": "Courses"
         },
         {
           "to": "/blog",
@@ -105,57 +101,22 @@ export default {
           "position": "left"
         },
         {
-          "href": "https://github.com/facebook/docusaurus",
-          "label": "GitHub",
-          "position": "right"
-        }
-      ],
-      "hideOnScroll": false
-    },
-    "footer": {
-      "style": "dark",
-      "links": [
-        {
-          "title": "Docs",
-          "items": [
-            {
-              "label": "Tutorial",
-              "to": "/docs/intro"
-            }
-          ]
+          "to": "/docs/projects",
+          "label": "Projects",
+          "position": "left"
         },
         {
-          "title": "Community",
-          "items": [
-            {
-              "label": "Stack Overflow",
-              "href": "https://stackoverflow.com/questions/tagged/docusaurus"
-            },
-            {
-              "label": "Discord",
-              "href": "https://discordapp.com/invite/docusaurus"
-            },
-            {
-              "label": "X",
-              "href": "https://x.com/docusaurus"
-            }
-          ]
+          "href": "https://discord.gg/robotics",
+          "label": "Community",
+          "position": "left"
         },
         {
-          "title": "More",
-          "items": [
-            {
-              "label": "Blog",
-              "to": "/blog"
-            },
-            {
-              "label": "GitHub",
-              "href": "https://github.com/facebook/docusaurus"
-            }
-          ]
+          "href": "https://github.com/your-repo",
+          "position": "right",
+          "className": "header-github-link",
+          "aria-label": "GitHub repository"
         }
-      ],
-      "copyright": "Copyright © 2025 My Project, Inc. Built with Docusaurus."
+      ]
     },
     "prism": {
       "theme": {
