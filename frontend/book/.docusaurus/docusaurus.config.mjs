@@ -101,7 +101,7 @@ export default {
           "position": "left"
         },
         {
-          "to": "/docs/projects",
+          "to": "/docs/intro",
           "label": "Projects",
           "position": "left"
         },

@@ -99,7 +99,7 @@ const config: Config = {
           position: 'left',
         },
         {
-          to: '/docs/projects',
+          to: '/docs/intro',
           label: 'Projects',
           position: 'left',
         },
