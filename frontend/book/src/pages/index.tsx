@@ -67,7 +67,7 @@ function HomepageHeader() {
         <div className="hero-image-container">
           <div className="robot-glow"></div>
           <img 
-            src="/img/advanced-robot-3d.png" 
+            src="/img/robot-placeholder.png" 
             alt="Advanced Humanoid Robot AI" 
             className="hero-robot-image"
             onError={(e) => {

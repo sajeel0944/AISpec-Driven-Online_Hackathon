@@ -115,5 +115,5 @@ def main_assistant(messages: List[Dict]):
     except InputGuardrailTripwireTriggered as e:
         return("My scope is limited to providing information and assistance on book-related topics only.")
     except Exception as e:
-        return f"Sorry, I'm currently unavailable. Please try again in a few moments.{e}"
+        return f"Sorry, I'm currently unavailable. Please try again in a few moments."
     

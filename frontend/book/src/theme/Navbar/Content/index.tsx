@@ -241,7 +241,7 @@ export default function NavbarContent() {
         <div className="mobile-auth-buttons">
           {isAuthenticated ? (
             <>
-              <div className="user-info" style={{ padding: "12px", background: "rgba(255,255,255,0.05)", borderRadius: "8px" }}>
+              <div className="user-info" style={{ padding: "12px", background: "rgba(10, 10, 15, 0.95)", borderRadius: "8px" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
                   <div className="user-avatar" style={{ width: "32px", height: "32px" }}>
                     {userData?.username?.[0]?.toUpperCase() || "U"}
