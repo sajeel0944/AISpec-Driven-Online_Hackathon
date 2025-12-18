@@ -34,17 +34,7 @@ const config: Config = {
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
-  i18n: {
-    defaultLocale: "en",
-    locales: ["en"],
-    localeConfigs: {
-    ur: {
-      label: 'اردو',
-      direction: 'rtl',
-    },
-  },
-  },
-
+ 
   presets: [
     [
       "classic",
@@ -84,39 +74,28 @@ const config: Config = {
     colorMode: {
       respectPrefersColorScheme: true,
     },
-    navbar:{
+    navbar: {
       hideOnScroll: true,
       items: [
         {
-          type: 'doc',
-          docId: 'intro',
-          position: 'left',
-          label: 'Courses',
+          type: "doc",
+          docId: "intro",
+          position: "left",
+          label: "Book",
         },
         {
-          to: '/blog',
-          label: 'Blog',
-          position: 'left',
+          to: "/blog",
+          label: "Blog",
+          position: "left",
         },
         {
-          to: '/docs/intro',
-          label: 'Projects',
-          position: 'left',
-        },
-        {
-          href: 'https://discord.gg/robotics',
-          label: 'Community',
-          position: 'left',
-        },
-        {
-          href: 'https://github.com/your-repo',
-          position: 'right',
-          className: 'header-github-link',
-          'aria-label': 'GitHub repository',
+          href: "https://github.com/sajeel0944/AISpec-Driven-Online_Hackathon",
+          position: "left",
+          label: "Github",
         },
       ],
     },
-    
+
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,

@@ -29,7 +29,7 @@ function HomepageHeader() {
         <div className="hero-text-content">
           <Heading as="h1" className="hero__title hero-title">
             Build The Future of
-            <span style={{ display: 'block', fontSize: '0.9em', marginTop: '10px' }}>
+            <span style={{ display: 'block', fontWeight:"600px", marginTop: '10px' }}>
               Physical AI & Robotics
             </span>
           </Heading>

@@ -36,19 +36,6 @@ export default {
   "organizationName": "facebook",
   "projectName": "docusaurus",
   "onBrokenLinks": "throw",
-  "i18n": {
-    "defaultLocale": "en",
-    "locales": [
-      "en"
-    ],
-    "localeConfigs": {
-      "ur": {
-        "label": "اردو",
-        "direction": "rtl"
-      }
-    },
-    "path": "i18n"
-  },
   "presets": [
     [
       "classic",
@@ -93,7 +80,7 @@ export default {
           "type": "doc",
           "docId": "intro",
           "position": "left",
-          "label": "Courses"
+          "label": "Book"
         },
         {
           "to": "/blog",
@@ -101,20 +88,9 @@ export default {
           "position": "left"
         },
         {
-          "to": "/docs/intro",
-          "label": "Projects",
-          "position": "left"
-        },
-        {
-          "href": "https://discord.gg/robotics",
-          "label": "Community",
-          "position": "left"
-        },
-        {
-          "href": "https://github.com/your-repo",
-          "position": "right",
-          "className": "header-github-link",
-          "aria-label": "GitHub repository"
+          "href": "https://github.com/sajeel0944/AISpec-Driven-Online_Hackathon",
+          "position": "left",
+          "label": "Github"
         }
       ]
     },
@@ -341,6 +317,14 @@ export default {
     }
   },
   "baseUrlIssueBanner": true,
+  "i18n": {
+    "defaultLocale": "en",
+    "path": "i18n",
+    "locales": [
+      "en"
+    ],
+    "localeConfigs": {}
+  },
   "onBrokenAnchors": "warn",
   "onDuplicateRoutes": "warn",
   "staticDirectories": [

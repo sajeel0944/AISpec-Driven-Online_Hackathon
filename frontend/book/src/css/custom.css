@@ -211,7 +211,7 @@ html[data-theme='dark'] .hero-background {
 
 .hero-title {
   font-size: 3rem;
-  font-weight: 800;
+  font-weight: 650;
   margin-bottom: 24px;
   line-height: 1.1;
   background: linear-gradient(90deg, #fff 0%, #4facfe 50%, #00f2fe 100%);
@@ -244,7 +244,7 @@ html[data-theme='dark'] .hero-background {
 
 @media (min-width: 1024px) {
   .hero-subtitle {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin-left: 0;
     margin-right: 0;
   }
@@ -398,6 +398,35 @@ html[data-theme='dark'] .hero-background {
 }
 
 /* Hero Image Container */
+
+/* ===== Google Translate Banner HACK ===== */
+/* Hide the Google Translate top banner iframe and reset body offset (for SSR/static builds) */
+iframe.goog-te-banner-frame,
+iframe[src*="translate.googleusercontent.com"],
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+}
+
+/* Ensure page isn't pushed down when banner is injected */
+body {
+  top: 0 !important;
+}
+
+/* Hide google widget icons/tooltip that may be added */
+.goog-te-gadget-icon,
+.goog-te-menu-value span,
+.goog-te-combo {
+  display: none !important;
+}
+
+/* In case Google wraps things in skiptranslate containers */
+.skiptranslate {
+  display: none !important;
+}
+
+/* End Google Translate hacks */
 .hero-image-container {
   position: relative;
   animation: float 6s ease-in-out infinite;
@@ -1018,7 +1047,7 @@ html[data-theme='dark'] .hero-background {
   }
   
   .hero-subtitle {
-    font-size: 1.1rem;
+    font-size: 1.0rem;
   }
   
   .hero-cta-primary,
@@ -1182,3 +1211,5 @@ input:focus {
   --ifm-button-color: var(--ifm-color-secondary);
   --ifm-button-color-hover: var(--ifm-color-secondary-dark);
 }
+
+

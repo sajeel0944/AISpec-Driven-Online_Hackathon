@@ -3,3 +3,4 @@ export interface UserData {
     email: string;
     education: string;
 }
+
